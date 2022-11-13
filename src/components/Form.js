@@ -45,7 +45,7 @@ const Form = () => {
                   <button 
                     disabled={page === numberPages-1}
                     onClick={() => {setPage((currPage) => 
-                    currPage + 1)}}>Next</button>
+                    currPage + 1)}}>{page === 0 ? "take the suervy" :"next"}</button>
                 </div>   
           </div>
         </div>  

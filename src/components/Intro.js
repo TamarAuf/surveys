@@ -1,8 +1,8 @@
 
+//raz 
 
 
-
-const Intro = ({nextStep}) => {
+const Intro = () => {
 
 
 
@@ -12,7 +12,6 @@ const Intro = ({nextStep}) => {
      <h3>  Welcome to MeNow! - </h3>
      <h2>an AI-powered platform predicting </h2>
      <h2>predicting highly individual skincare recommendations.</h2>
-     <button onClick={nextStep}>Take the suervy</button>
     </div>
   );
 }
