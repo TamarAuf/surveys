@@ -13,22 +13,34 @@ const Form = () => {
 
   const numberPages = 8;
 
+  const nextStep = () => {
+    setPage((currPage) => 
+    currPage + 1)
+  }
+
   const PageDisplay = () => {
     switch (page){
         case 0:
-            return(<Intro/>);
+            return(<Intro
+              nextStep={nextStep}/>);
         case 1:
-            return(<B1/>);   
+            return(<B1
+              nextStep={nextStep}/>);   
         case 2:
-            return(<B2/>);
+            return(<B2
+              nextStep={nextStep}/>);
         case 3:
-            return(<B3/>);
+            return(<B3
+              nextStep={nextStep}/>);
         case 4:
-            return(<B4/>);    
+            return(<B4
+              nextStep={nextStep}/>);    
         case 5:
-            return(<B5/>);
+            return(<B5
+              nextStep={nextStep}/>);
         case 6:
-            return(<B6/>);
+            return(<B6
+              nextStep={nextStep}/>);
         case 7:
             return(<Result/>);
         default:
@@ -37,21 +49,8 @@ const Form = () => {
   }
 
   return (
-    <div className="form">
-      <div className="form-container">
-          <div className="header">
-              <div className="body">{PageDisplay()}</div>
-                <div className="footer">
-                  <button 
-                    disabled={page === numberPages-1}
-                    onClick={() => {setPage((currPage) => 
-                    currPage + 1)}}>Next</button>
-                </div>   
-          </div>
-        </div>  
-    </div>
-        
-    
+    <div className="page">
+      {PageDisplay()}</div>
   )
 }
 

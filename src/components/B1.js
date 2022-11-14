@@ -1,17 +1,8 @@
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-
-// next = (e) => {
-//   e.preventDefault();
-//   this.props.nextStep();
-// }
-
-const B1 = () =>{
+const B1 = ({nextStep}) =>{
     return (
         <div>
-         <h3>B1 </h3>
+         <h1>B1 info</h1>
+         <button onClick={nextStep}>Next</button>
         </div>
       );
 }

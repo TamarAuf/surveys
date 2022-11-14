@@ -1,4 +1,4 @@
-const B3 = () =>{
+const B3 = ({nextStep}) =>{
     let options=["Yes", "No", "Not Sure"];
     return (
       <div className="B3-container">
@@ -15,6 +15,7 @@ const B3 = () =>{
           </>
           ))}
         </div> 
+        <button onClick={nextStep}>Next</button>
       </div>
       );
 }
