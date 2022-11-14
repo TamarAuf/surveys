@@ -49,7 +49,7 @@ const Form = () => {
   }
 
   return (
-    <div className="page">
+      <div className="page">
       {PageDisplay()}</div>
   )
 }
