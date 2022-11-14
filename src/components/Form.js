@@ -11,7 +11,6 @@ import Result from "./Result"
 const Form = () => {
   const [page, setPage] = useState(0);
 
-  const numberPages = 8;
 
   const nextStep = () => {
     setPage((currPage) => 
