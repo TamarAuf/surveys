@@ -49,8 +49,8 @@ const Form = () => {
   }
 
   return (
-    <div className="page">
-      {PageDisplay()}</div>
+      <div className="page">
+      {PageDisplay()}</div>   
   )
 }
 
