@@ -1,5 +1,12 @@
+import { useState } from "react"
+
 const B3 = ({nextStep}) =>{
     let options=["Yes", "No", "Not Sure"];
+    const [option, setOption] = useState();
+
+    let skinTypes=["Dry", "Oily", "Combination", "Sensitive", "Normal"];
+    const [skinType, setSkinType] = useState();
+
     return (
       <div className="B3-container">
         <header>
@@ -10,11 +17,23 @@ const B3 = ({nextStep}) =>{
         <p>Do you agree?</p>
         {options.map(result=>(
           <>
-          <input type="radio" value={result} name="radiovalues"/>
+          <input type="radio" value={result} name="radioValues"
+          onChange={(e)=>setOption(e.target.value)}/>
           <label>{result}</label>
           </>
           ))}
         </div> 
+        {option === "No" || option === "Not Sure" ?  
+        <div>
+          <p>Then what kind of skin do you think you have?</p>
+          {skinTypes.map(result=>(
+          <>
+          <input type="radio" value={result} name="radioValues2"
+          onChange={(e)=>setSkinType(e.target.value)}/>
+          <label>{result}</label>
+          </>
+          ))}
+        </div> : ""}
         <button onClick={nextStep}>Next</button>
       </div>
       );
