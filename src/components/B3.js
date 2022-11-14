@@ -11,13 +11,13 @@ const B3 = ({nextStep}) =>{
       <div className="B3-container">
         <header>
          <h1>Great! Let's compare assumptions</h1>
-         <h2>According to your answers, I can assume that you have skin type</h2>
+         <p>According to your answers, I can assume that you have skin type</p>
         </header>
         <div>
         <p>Do you agree?</p>
         {options.map(result=>(
           <>
-          <input type="radio" value={result} name="radioValues"
+          <input type="radio" value={result} name="radioValues1"
           onChange={(e)=>setOption(e.target.value)}/>
           <label>{result}</label>
           </>
