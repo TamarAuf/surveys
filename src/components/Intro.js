@@ -20,7 +20,7 @@ const Intro = ({nextStep}) => {
       <p className="intro-text3">Take a five-minute <div className="display-linebreak"></div>
       questionnaire about your skin</p>
      <button onClick={null} className="intro-button1">Use image analysis</button>
-     <button onClick={nextStep} className="intro-button2">take the suervy</button>
+     <button onClick={nextStep} className="intro-button2">take the survey</button>
     </div>
   );
 }
