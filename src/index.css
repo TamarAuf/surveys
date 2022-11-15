@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Poppins', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +13,63 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.title{
+  text-align: left;
+  margin-left: 120px;
+  font-size: 40px;
+}
+
+.subtitle{
+  text-align: left;
+  margin-left: 120px;
+  font-size: 24px;
+}
+
+.B2-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows:auto auto auto auto;
+}
+
+.B3-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows:auto auto;
+}
+
+.question {
+  text-align: left;
+  margin-left: 120px;
+  grid-column: 1;
+  position: relative;
+}
+
+.radio-options{
+  text-align: right;
+  margin-right: 10px;
+  grid-column: 2;
+  position: relative;
+  top: 50px;
+}
+
+.radio-buttons{
+  position: relative;
+  top: 50px;
+}
+
+.btn {
+  background-color: white; 
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 19px;
+  border: 2px solid #000000;
+  border-radius: 40px;
+  width: 150px;
+  position: absolute;
+  top: 600px;
+  left: 500px;
 }

@@ -9,7 +9,7 @@ const B2 = ({nextStep}) =>{
 
     let sunOptions=["I have fair skin that burns easily and hardly tan", 
     "My skin tans easily and rarely burns", 
-    "I have dark skin that hardly get sunburned"];
+    "I have dark skin that hardly gets sunburned"];
     const [sun, setSun] = useState();
 
     let sensitiveOptions=["I have irritated skin",
@@ -20,45 +20,66 @@ const B2 = ({nextStep}) =>{
 
     return (
         <div className="B2-container">
-         <h1>Nice to meet you, Name!</h1>
-         <p>I want to help you to choose the most matching skin care</p>
-         <p>regimen for you. Please tell me a little about your skin.</p>
-         <p>How does your skin feel after cleaning and before putting moisturizer?</p>
+          <header>
+            <h1 className="title">Nice to meet you, Name!</h1>
+            <p className="subtitle">I want to help you to choose the most matching skin care <br />
+            regimen for you. Please tell me a little about your skin.</p>
+          </header>
+         <div className="B2-grid-container">
+         <div>
+         <p className="question">How does your skin feel after <br />
+         cleaning and before putting <br />
+         moisturizer?</p>
+         </div>
+         <div>
          {cleanOptions.map(result=>(
           <>
-          <input type="radio" value={result} name="radioValues1"
+          <input className="radio-buttons" type="radio" value={result} name="radioValues1"
           onChange={(e)=>setClean(e.target.value)}/>
-          <label>{result}</label>
+          <label className="radio-options">{result}</label>
           </>
           ))}
-
-          <p>Does your skin usually feel drier in the winter?</p>
+          </div>
+          <div>
+          <p className="question">Does your skin usually feel <br />
+          drier in the winter?</p>
+          </div>
+          <div>
           {winterOptions.map(result=>(
           <>
-          <input type="radio" value={result} name="radioValues2"
+          <input className="radio-buttons" type="radio" value={result} name="radioValues2"
           onChange={(e)=>setWinter(e.target.value)}/>
-          <label>{result}</label>
+          <label className="radio-options">{result}</label>
           </>
           ))}
-
-          <p>How does your skin react to sun?</p>
+          </div>
+          <div>
+          <p className="question">How does your skin react to <br />
+          the sun?</p>
+          </div>
+          <div>
           {sunOptions.map(result=>(
           <>
-          <input type="radio" value={result} name="radioValues3"
+          <input className="radio-buttons" type="radio" value={result} name="radioValues3"
           onChange={(e)=>setSun(e.target.value)}/>
-          <label>{result}</label>
+          <label className="radio-options">{result}</label>
           </>
           ))}
-
-          <p>Is your skin sensitive?</p>
+          </div>
+          <div>
+          <p className="question">Is your skin sensitive?</p>
+          </div>
+          <div>
           {sensitiveOptions.map(result=>(
           <>
-          <input type="radio" value={result} name="radioValues4"
+          <input className="radio-buttons" type="checkbox" value={result} 
           onChange={(e)=>setSensitive(e.target.value)}/>
-          <label>{result}</label>
+          <label className="radio-options">{result}</label>
           </>
           ))}
-          <button onClick={nextStep}>Next</button>
+          </div>
+          </div>
+          <button className="btn" onClick={nextStep}>Next</button>
         </div>
       );
 }
