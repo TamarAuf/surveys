@@ -32,7 +32,7 @@ h2 {
     font-weight: 400;
     font-size: 24px;
     line-height: 130%;
-/* or 31px */
+    /* or 31px */
 
 
 color: #000000;
@@ -44,9 +44,9 @@ button {
     /* Frame 3 */
 
 
-box-sizing: border-box;
+    box-sizing: border-box;
 
-/* Auto layout */
+    /* Auto layout */
 
     display: flex;
     flex-direction: row;
@@ -146,7 +146,7 @@ box-sizing: border-box;
 .intro-button2{
     box-sizing: border-box;
 
-/* Auto layout */
+    /* Auto layout */
 
     display: flex;
     flex-direction: row;
@@ -162,4 +162,16 @@ box-sizing: border-box;
 
     border: 2px solid #000000;
     border-radius: 40px;
+}
+
+/*B1*/
+
+.B1-form {
+
+    position: absolute;
+    align-items: flex-start;
+    position: fixed; 
+    top: 50%;
+    left: 20%;
+    
 }
