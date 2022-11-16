@@ -1,5 +1,4 @@
 import './App.css';
-import "./style.css"
 import Form from "./components/Form"
 
 
