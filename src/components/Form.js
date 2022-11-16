@@ -47,6 +47,35 @@ const Form = () => {
     }
   }
 
+  var responses = {
+    B1Responses : {
+
+    },
+    B2Responses : {
+      clean: "",
+      winter: "",
+      sun: "",
+      sensitive: []
+    },
+    B3Responses : {
+      agree: "",
+      skinType: "",
+    },
+    B4Responses : {
+
+    },
+    B5Responses : {
+
+    },
+    B6Responses : {
+      smoke: "",
+      allergy: "",
+      circumstance: "",
+      hormonal: "",
+      impact: ""
+    }
+  };
+
   return (
       <div className="page">
       {PageDisplay()}</div>
