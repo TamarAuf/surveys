@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const B2 = ({nextStep}) =>{
+const B2 = ({nextStep}) => {
     let cleanOptions=["Tight and dry", "Smooth and Comfortable", "Still greasy and shiny"];
     const [clean, setClean] = useState();
 
