@@ -22,14 +22,16 @@ const B2 = ({nextStep}) =>{
         <div className="B2-container">
           <header>
             <h1 className="title">Nice to meet you, Name!</h1>
-            <p className="subtitle">I want to help you to choose the most matching skin care <br />
-            regimen for you. Please tell me a little about your skin.</p>
+            <h2 className="subtitle">I want to help you to choose the most matching skin care <br />
+            regimen for you. Please tell me a little about your skin.</h2>
           </header>
+
+         <form className="form">  
          <div className="B2-grid-container">
          <div>
-         <p className="question">How does your skin feel after <br />
+         <label className="question">How does your skin feel after <br />
          cleaning and before putting <br />
-         moisturizer?</p>
+         moisturizer?</label>
          </div>
          <div>
          {cleanOptions.map(result=>(
@@ -41,8 +43,8 @@ const B2 = ({nextStep}) =>{
           ))}
           </div>
           <div>
-          <p className="question">Does your skin usually feel <br />
-          drier in the winter?</p>
+          <label className="question">Does your skin usually feel <br />
+          drier in the winter?</label>
           </div>
           <div>
           {winterOptions.map(result=>(
@@ -54,8 +56,8 @@ const B2 = ({nextStep}) =>{
           ))}
           </div>
           <div>
-          <p className="question">How does your skin react to <br />
-          the sun?</p>
+          <label className="question">How does your skin react to <br />
+          the sun?</label>
           </div>
           <div>
           {sunOptions.map(result=>(
@@ -67,7 +69,7 @@ const B2 = ({nextStep}) =>{
           ))}
           </div>
           <div>
-          <p className="question">Is your skin sensitive?</p>
+          <label className="question">Is your skin sensitive?</label>
           </div>
           <div>
           {sensitiveOptions.map(result=>(
@@ -79,8 +81,10 @@ const B2 = ({nextStep}) =>{
           ))}
           </div>
           </div>
-          <button className="btn" onClick={nextStep}>Next</button>
+          </form>
+          <button className="btn" onClick={nextStep} tyle={{  width: 126, height: 64, left: 427,top: 1200}}>Next</button>
         </div>
+      
       );
 }
 

@@ -101,9 +101,8 @@ p{
 }
 
 
-/*B1*/
 
-.B1-form {
+form {
 
   position: absolute;
   align-items: flex-start;
