@@ -47,7 +47,7 @@ const Form = () => {
     }
   }
 
-  var responses = {
+  let responses = {
     B1Responses : {
 
     },
@@ -73,6 +73,50 @@ const Form = () => {
       circumstance: "",
       hormonal: "",
       impact: ""
+    }
+  };
+
+  let questions = {
+    B1Questions : {
+      questions : []
+    },
+    B2Questions : {
+      questions: ["How does your skin feel after cleaning and before putting moisturizer?",
+                  "Does your skin usually feel drier in the winter?",
+                  "How does your skin react to the sun?",
+                  "Is your skin sensitive?"],
+      clean: ["Tight and dry", "Smooth and Comfortable", "Still greasy and shiny"],
+      winter: ["Yes", "No", "Not Sure"],
+      sun: ["I have fair skin that burns easily and hardly tan", 
+            "My skin tans easily and rarely burns", 
+            "I have dark skin that hardly gets sunburned"],
+      sensitive: ["I have irritated skin",
+                  "I’m prone to allergic reaction on my skin", 
+                  "I have psoriasis",
+                  "I have atopic dermatitis"]
+    }, 
+    B3Questions : {
+      questions: ["Do you agree?", "Then what kind of skin do you think you have?"],
+      agree: ["Yes", "No", "Not Sure"],
+      skinType: ["Dry", "Oily", "Combination", "Sensitive", "Normal"]
+    },
+    B4Questions : {
+      questions : []
+    },
+    B5Questions : {
+      questions : []
+    },
+    B6Questions : {
+      questions: ["Are you smoking?", 
+                  "Are you allergic to one of these items?", 
+                  "Are you currently in one of these circumstances?",
+                  "Are you taking a hormonal contraceptive?",
+                  "What impact does it have on your skin?"],
+      smoke: ["Yes", "No", "Only on rare occasions"],
+      allergy: ["Item1", "Item2", "Item3"],
+      circumstance: ["Pregnant", "Breastfeeding", "Menopause", "None of that", "Prefer not to say"],
+      hormonal: ["Yes", "No", "Prefer not to answer"],
+      impact: ["Better", "Worse"]
     }
   };
 
