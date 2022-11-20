@@ -13,6 +13,9 @@ const B6 = ({nextStep}) =>{
     const hormonalOptions=["Yes", "No", "Prefer not to answer"];
     const [hormone, setHormone] = useState();
 
+    const impactCheckboxOptions=["acne", "dry", "sensitive"];
+    const [impactCheckbox, setImpactCheckbox] = useState();
+
     const impactOptions=["Better", "Worse"];
     const [impact, setImpact] = useState();
 
@@ -42,7 +45,7 @@ const B6 = ({nextStep}) =>{
         <div>
         {allergyOptions.map(result=>(
           <>
-          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="checkbox" value={result} name="radioValues1"
+          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="checkbox" value={result} name="radioValues2"
           onChange={(e)=>setAllergy(e.target.value)}/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
@@ -54,7 +57,7 @@ const B6 = ({nextStep}) =>{
         <div>
         {circumstances.map(result=>(
           <>
-          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues1"
+          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues3"
           onChange={(e)=>setCircumstance(e.target.value)}/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
@@ -65,7 +68,7 @@ const B6 = ({nextStep}) =>{
           <p className="question">Are you taking a hormonal <br /> contraceptive?</p>
           {hormonalOptions.map(result=>(
           <>
-          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues2"
+          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues4"
           onChange={(e)=>setHormone(e.target.value)}/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
@@ -73,9 +76,11 @@ const B6 = ({nextStep}) =>{
         <p className="question">What impact does it have on <br /> your skin?</p>
         {impactOptions.map(result=>(
         <>
-        <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues2"
+        <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues5"
         onChange={(e)=>setImpact(e.target.value)}/>
-        <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
+        <label style={{"position": "relative", "top": "0px"}} className="radio-options">
+            {{result} === "acne" ? "Better" : "Worse"}
+        </label>
         </>
         ))}
       </div> : ""}
