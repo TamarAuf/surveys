@@ -11,11 +11,11 @@ const B3 = ({nextStep}) =>{
       <div className="B3-container">
         <header>
          <h1 className="title">Great! Let's compare assumptions</h1>
-         <p className="subtitle">According to your answers, I can assume that you have skin type</p>
+         <h2 className="subtitle">According to your answers, I can assume that you have skin type</h2>
         </header>
-        <div className="B3-grid-container">
+        <form className="form"> 
         <div>
-        <p className="question">Do you agree?</p>
+        <label className="question">Do you agree?</label>
         </div>
         <div>
         {agree.map(result=>(
@@ -28,7 +28,7 @@ const B3 = ({nextStep}) =>{
         </div> 
         {agree === "No" || agree === "Not Sure" ?  
         <div>
-          <p className="question">Then what kind of skin do you think you have?</p>
+          <label className="question">Then what kind of skin do you think you have?</label>
           {skinTypes.map(result=>(
           <>
           <input className="radio-buttons" type="radio" value={result} name="radioValues2"
@@ -37,8 +37,8 @@ const B3 = ({nextStep}) =>{
           </>
           ))}
         </div> : ""}
+        </form>
         <button className="btn" onClick={nextStep}>Next</button>
-      </div>
       </div>
       );
 }
