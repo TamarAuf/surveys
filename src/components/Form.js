@@ -9,6 +9,7 @@ import B5 from "./B5"
 import B6 from "./B6"
 import Result from "./Result"
 
+
 const Form = () => {
   const [page, setPage] = useState(0);
 
@@ -22,8 +23,7 @@ const Form = () => {
  const handleChange = (response,value) => {
         response = value;
  }
-    
-  
+   
   
         
 
@@ -33,7 +33,7 @@ const Form = () => {
             return(<Intro
               nextStep={nextStep}/>);
         case 1:
-            return(<B1 values={responses.B1Responses} 
+            return(<B1  questions ={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
             return(<B2
@@ -57,7 +57,7 @@ const Form = () => {
     }
   }
 
-  let responses = {
+  let Responses = {
     B1Responses : {
        name: "",
        age: "",
@@ -109,9 +109,12 @@ const Form = () => {
     }
   };
 
-  let questions = {
+
+  let Questions = {
     B1Questions : {
-      questions : []
+      questions : ["What should we call you?","How old are you?","Which gender do you identify with?"],
+      age: ["up to 20","21-35","36-60","60 and up","prefer not to say"],
+      gender: ["Female","Male","Transwomen","Transman","Non-binary","Prefer not to say"]
     },
     B2Questions : {
       questions: ["How does your skin feel after cleaning and before putting moisturizer?",
@@ -134,10 +137,36 @@ const Form = () => {
       skinType: ["Dry", "Oily", "Combination", "Sensitive", "Normal"]
     },
     B4Questions : {
-      questions : []
+      questions : ["age-related","acne-related","redness","flakes","facial hair"],
+      ageRrelatedOptions: ["Sagging skin","Fine lines","Wrinkles","Pigmentation"],
+      acneRelatedOptions:["blackheads","pimples","severe acne"], 
+      rednessOptions: ["From time to time my skin is a little red"
+    ,"Looks like I have sunburn without going to the sun"
+    ,"I have apparent blood vessels","I was diagnosed with Rosacea "],
+     flakesOptions:["dundruff in the hair or beard","flakes on the skin","seborrhea"],
+     faicalHairOptions:["I shave sometimes or as part of daily skin care routine","I have a beard and don’t shave"]
     },
-    B5Questions : {
-      questions : []
+    B5Questions: {
+      Acne: {
+        questions: ["do you have pimpels all the time?","What do you fell causes these changes?","How does your skin usually react to skin care products for acne-prone skin?"],
+        pimpelsOptions: ["Only on occasion","Always,but intesity varies in time","Always,int rather consistent manner"],
+        changesOptions: ["Hormonal changes","Lack of sleep","Wearing a mask","Alimentation","Shaving","not Sure"],
+        skinReactOptions:["it helps,and my skin fells comfotable","Usually,useless,but my skin fells fine","it works.but leaves my skin feeling dry and itchy","never tried"]
+      },
+
+      Pigmentation : {
+        questions : ["Wich Pigmentation problem do you suffer from?","Are the pigmentation issues related to sun exposure?","Wich other factors seem to affect the appearance of the spots?"],
+        problemOptions: ["discoloration","Dark spots"],
+        sunExposureOptions: ["Yes","No","not sure"],
+        skinReactOption: ["Stress,fatigue","Hormonal changes","Acne scars","Medical issues","Not sure"]
+      },
+
+      Shave : {
+        questions : ["How often do you shave?","Wich type of razor do you use?"],
+        oftenOptions: ["Every day","Evrey couple of days","Less then once a week","Only shaving specific area such as the neck"],
+        razorOptions: ["Singale or double-blade manual razor","Multi-blades manual razor","Dry electric shaver","Wet electric shaver"]
+      }
+
     },
     B6Questions : {
       questions: ["Are you smoking?", 
@@ -152,7 +181,9 @@ const Form = () => {
       impact: ["Better", "Worse"]
     }
   };
+  
 
+  
   return (
       <div className="page">
       {PageDisplay()}</div>

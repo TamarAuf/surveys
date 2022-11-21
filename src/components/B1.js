@@ -1,7 +1,7 @@
 //raz
-const B1 = ({nextStep},values) =>{
+const B1 = ({nextStep},questions,options) =>{
     
-  let age=["up to 20","21-35","36-60","60 and up","prefer not to say"]
+  //let age=["up to 20","21-35","36-60","60 and up","prefer not to say"]
   let gender=["Female","Male","Transwomen","Transman","Non-binary","Prefer not to say"]
 
     return (
@@ -12,25 +12,25 @@ const B1 = ({nextStep},values) =>{
           </hedar>
           <form className="form">
             
-          <label>What should we call you?</label>
-          <input type="text" placeholder="Name or nickname"></input>
+          <label>{questions[0]}</label>
+          <input type="text" placeholder="Name or nickname"></input><br/>
 
-          <div className="display-linebreak"></div>
+          
 
-          <label>How old are you?</label>
-          {age.map(result=>(
+          <label>questions[1]</label>
+          {options.age.map(result=>(
           <>
-          <input type="radio" value={result} onChange={(e)=>values.age=e.target.value} name="radioValues1"/>
+          <input type="radio" value={result} onChange={null} name="radioValues1"/><br/>
           <label>{result}</label> 
           </>
           ))}
 
-         <div className="display-linebreak"></div>
+         
         
          <label>Which gender do you identify with?</label>
           {gender.map(result=>(
           <>
-          <input type="radio" value={result} onChange={console.log(values.age)} name="radioValues2"/>
+          <input type="radio" value={result} onChange={null} name="radioValues2"/>
           <label>{result}</label> 
           </>  
           ))}
