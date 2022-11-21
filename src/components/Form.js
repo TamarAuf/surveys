@@ -1,5 +1,4 @@
 import { useState } from "react"
-import React, { Component } from 'react';
 import Intro from "./Intro"
 import B1 from "./B1"
 import B2 from "./B2"
@@ -33,7 +32,7 @@ const Form = () => {
             return(<Intro
               nextStep={nextStep}/>);
         case 1:
-            return(<B1  questions ={Questions.B1Questions.questions} options={Questions.B1Questions}
+            return(<B1  questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
             return(<B2

@@ -1,9 +1,6 @@
 //raz
-const B1 = ({nextStep},questions,options) =>{
+const B1 = ({nextStep,questions,options}) =>{
     
-  //let age=["up to 20","21-35","36-60","60 and up","prefer not to say"]
-  let gender=["Female","Male","Transwomen","Transman","Non-binary","Prefer not to say"]
-
     return (
         <div className= "B1-container">
           <hedar>
@@ -16,19 +13,18 @@ const B1 = ({nextStep},questions,options) =>{
           <input type="text" placeholder="Name or nickname"></input><br/>
 
           
-
-          <label>questions[1]</label>
+          <label>{questions[1]}</label><br/>
           {options.age.map(result=>(
           <>
-          <input type="radio" value={result} onChange={null} name="radioValues1"/><br/>
+          <input type="radio" value={result} onChange={null} name="radioValues1"/>
           <label>{result}</label> 
           </>
           ))}
 
          
-        
-         <label>Which gender do you identify with?</label>
-          {gender.map(result=>(
+          <br/>
+         <label>{questions[2]}</label><br/>
+          {options.gender.map(result=>(
           <>
           <input type="radio" value={result} onChange={null} name="radioValues2"/>
           <label>{result}</label> 
