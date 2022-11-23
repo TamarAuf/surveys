@@ -1,5 +1,5 @@
 //raz
-const B1 = ({nextStep,questions,options}) =>{
+const B1 = ({nextStep,setResponses,responses,questions,options}) =>{
     
     return (
         <div className= "B1-container">
@@ -10,16 +10,17 @@ const B1 = ({nextStep,questions,options}) =>{
           <form className="form">
             
           <label>{questions[0]}</label>
-          <input type="text" placeholder="Name or nickname"></input><br/>
+          <input type="text" placeholder="Name or nickname" onChange={(e)=>setResponses({...responses,name: e.target.value})}></input><br/>
 
           
           <label>{questions[1]}</label><br/>
           {options.age.map(result=>(
           <>
-          <input type="radio" value={result} onChange={null} name="radioValues1"/>
+          <input type="radio" value={result} onChange={(e)=>setResponses({...responses,age: e.target.value})} name="radioValues1"/>
           <label>{result}</label> 
           </>
           ))}
+          
 
          
           <br/>

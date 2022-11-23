@@ -14,16 +14,67 @@ import Result from "./Result"
 const Form = () => {
   const [page, setPage] = useState(0);
 
+  const [Responses,setResponses]  = useState({
+      B1Responses : {
+         name: "raz",
+         age: "",
+        gender: ""
+      },
+      B2Responses : {
+        clean: "",
+        winter: "",
+        sun: "",
+        sensitive: []
+      },
+      B3Responses : {
+        agree: "",
+        skinType: ""
+      },
+      B4Responses : {
+      ageRelated:[],
+      acneRelated:[],
+      redness:[],
+      flakes:[],
+      facialHair:""
+  
+      },
+      B5Responses : {
+        Acne: {
+          pimpels: "",
+          changes: [],
+          skinReact: ""
+        },
+  
+        Pigmentation : {
+          problem: [],
+          sunExposure: "",
+          otherFactor: [],
+        },
+  
+        Shave : {
+          often: "",
+          razor: "" 
+        }
+  
+      },
+      B6Responses : {
+        smoke: "",
+        allergy: "",
+        circumstance: "",
+        hormonal: "",
+        impact: ""
+      }
+    });
+  
+  
+
 // function to skip pages 
   const nextStep = () => {
     setPage((currPage) => 
     currPage + 1)
   }
 
-  //functions to update the responses
- const handleChange = (response,value) => {
-        response = value;
- }
+ 
    
   
         
@@ -34,7 +85,7 @@ const Form = () => {
             return(<Intro
               nextStep={nextStep}/>);
         case 1:
-            return(<B1  questions={Questions.B1Questions.questions} options={Questions.B1Questions}
+            return(<B1  responses={Responses.B1Responses}  setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
             return(<B2
@@ -58,57 +109,7 @@ const Form = () => {
     }
   }
 
-  let Responses = {
-    B1Responses : {
-       name: "",
-       age: "",
-      gender: ""
-    },
-    B2Responses : {
-      clean: "",
-      winter: "",
-      sun: "",
-      sensitive: []
-    },
-    B3Responses : {
-      agree: "",
-      skinType: ""
-    },
-    B4Responses : {
-    ageRelated:[],
-    acneRelated:[],
-    redness:[],
-    flakes:[],
-    facialHair:""
 
-    },
-    B5Responses : {
-      Acne: {
-        pimpels: "",
-        changes: [],
-        skinReact: ""
-      },
-
-      Pigmentation : {
-        problem: [],
-        sunExposure: "",
-        otherFactor: [],
-      },
-
-      Shave : {
-        often: "",
-        razor: "" 
-      }
-
-    },
-    B6Responses : {
-      smoke: "",
-      allergy: "",
-      circumstance: "",
-      hormonal: "",
-      impact: ""
-    }
-  };
 
 
   return (
