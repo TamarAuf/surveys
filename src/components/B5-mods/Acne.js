@@ -1,14 +1,12 @@
 
-const Acne = () =>{
-    let pimpelsOptions=["Only on occasion","Always,but intesity varies in time","Always,int rather consistent manner"]
-    let changesOptions=["Hormonal changes","Lack of sleep","Wearing a mask","Alimentation","Shaving","not Sure"]
-    let skinReactOptions=["it helps,and my skin fells comfotable","Usually,useless,but my skin fells fine","it works.but leaves my skin feeling dry and itchy","never tried"]
+const Acne = ({acne}) =>{
+    
     return(
             <div> 
             <form className="form">
             <h1>You mentioned you have acne,let's learn more</h1>    
-            <label>do you have pimpels all the time?</label>
-            {pimpelsOptions.map(result=>(
+            <label>{acne.questions[0]}</label>
+            {acne.pimpels.map(result=>(
             <>
             <input className="radio-buttons" type="radio" value={result} 
             onChange={null}/>
@@ -17,8 +15,8 @@ const Acne = () =>{
             ))}
 
             <br/>
-            <label>What do you fell causes these changes?</label>
-            {changesOptions.map(result=>(
+            <label>{acne.questions[1]}</label>
+            {acne.changes.map(result=>(
             <>
             <input className="radio-buttons" type="checkbox" value={result} 
             onChange={null}/>
@@ -27,8 +25,8 @@ const Acne = () =>{
             ))}
 
             <br/>
-            <label>How does your skin usually react to skin care products for acne-prone skin?</label>
-            {skinReactOptions.map(result=>(
+            <label>{acne.questions[2]}</label>
+            {acne.skinReact.map(result=>(
             <>
             <input className="radio-buttons" type="radio" value={result} 
             onChange={null}/>

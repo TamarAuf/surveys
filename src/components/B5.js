@@ -4,7 +4,7 @@ import Acne from "./B5-mods/Acne"
 import Pigmentation from "./B5-mods/Pigmentation" 
 import Shave from "./B5-mods/Shave"  
 
-const B5 = ({nextStep}) =>{
+const B5 = ({nextStep,acne,pigmentation,shave}) =>{
 
 
     return(
@@ -15,9 +15,9 @@ const B5 = ({nextStep}) =>{
           <h2>What are the signs you have or sometimes notice? <br/> 
           Select all the examples that fit</h2>
          </header>
-         <Acne/> 
-         <Pigmentation/>
-         <Shave/>
+         <Acne acne={acne}/> 
+         <Pigmentation pigmentation={pigmentation}/>
+         <Shave shave={shave}/>
         <button onClick={nextStep}>Next</button>
         </div>
     );
