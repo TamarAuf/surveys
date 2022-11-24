@@ -18,7 +18,7 @@ const B3 = ({nextStep}) =>{
         <label className="question">Do you agree?</label>
         </div>
         <div>
-        {agree.map(result=>(
+        {agreeOptions.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues1"
           onChange={(e)=>setAgree(e.target.value)}/>
