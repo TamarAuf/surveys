@@ -1,15 +1,8 @@
 //raz
 
-const B4 = ({nextStep}) => {
+const B4 = ({nextStep,questions,options}) => {
 
-    let ageRrelatedOptions=["Sagging skin","Fine lines","Wrinkles","Pigmentation"]
-    let acneRelatedOptions=["blackheads","pimples","severe acne"] 
-    let rednessOptions=["From time to time my skin is a little red"
-    ,"Looks like I have sunburn without going to the sun"
-    ,"I have apparent blood vessels","I was diagnosed with Rosacea "]
-    let flakesOptions=["dundruff in the hair or beard","flakes on the skin","seborrhea"]
-    let faicalHairOptions=["I shave sometimes or as part of daily skin care routine","I have a beard and don’t shave"]
-
+    
     return (
         <div className="B4-container">
         <headr> 
@@ -19,8 +12,8 @@ const B4 = ({nextStep}) => {
         </headr>  
      
         <form className="form">
-        <label>age-related</label>
-        {ageRrelatedOptions.map(result=>(
+        <label>{questions[0]}</label>
+        {options.ageRrelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
         onChange={null}/>
@@ -29,8 +22,8 @@ const B4 = ({nextStep}) => {
         ))}
 
         <br/>
-        <label>acne-related </label>
-        {acneRelatedOptions.map(result=>(
+        <label>{questions[1]}</label>
+        {options.acneRelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
         onChange={null}/>
@@ -39,8 +32,8 @@ const B4 = ({nextStep}) => {
         ))}
         
         <br/>
-        <label>redness</label>
-        {rednessOptions.map(result=>(
+        <label>{questions[2]}</label>
+        {options.redness.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
         onChange={null}/>
@@ -49,8 +42,8 @@ const B4 = ({nextStep}) => {
         ))}
 
         <br/>
-        <label>flakes</label>
-        {flakesOptions.map(result=>(
+        <label>{questions[3]}</label>
+        {options.flakes.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
         onChange={null}/>
@@ -59,8 +52,8 @@ const B4 = ({nextStep}) => {
         ))}
 
         <br/>
-        <label>facial hair</label>
-        {faicalHairOptions.map(result=>(
+        <label>{questions[4]}</label>
+        {options.faicalHair.map(result=>(
         <>
         <input className="radio-buttons" type="radio" value={result} 
         onChange={null}/>

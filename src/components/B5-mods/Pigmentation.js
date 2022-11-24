@@ -1,16 +1,12 @@
 
-const Pigmentation = () =>{
-    
-    let problemOptions=["discoloration","Dark spots"]
-    let sunExposureOptions=["Yes","No","not sure"]
-    let otherFactorsOptions=["Stress,fatigue","Hormonal changes","Acne scars","Medical issues","Not sure"]
+const Pigmentation = ({pigmentation}) =>{
     
     return(
             <div> 
             <form className="form" style={{marginTop:150}}>
             <h1>You mentioned you have acne,let's learn more</h1>    
-            <label>Wich Pigmentation problem do you suffer from?</label>
-            {problemOptions.map(result=>(
+            <label>{pigmentation.questions[0]}</label>
+            {pigmentation.problem.map(result=>(
             <>
             <input className="radio-buttons" type="checkbox" value={result} 
             onChange={null}/>
@@ -19,8 +15,8 @@ const Pigmentation = () =>{
             ))}
 
             <br/>
-            <label>Are the pigmentation issues related to sun exposure?</label>
-            {sunExposureOptions.map(result=>(
+            <label>{pigmentation.questions[1]}</label>
+            {pigmentation.sunExposure.map(result=>(
             <>
             <input className="radio-buttons" type="radio" value={result} 
             onChange={null}/>
@@ -29,8 +25,8 @@ const Pigmentation = () =>{
             ))}
 
             <br/>
-            <label>Wich other factors seem to affect the appearance of the spots?</label>
-            {otherFactorsOptions.map(result=>(
+            <label>{pigmentation.questions[2]}</label>
+            {pigmentation.skinReact.map(result=>(
             <>
             <input className="radio-buttons" type="checkbox" value={result} 
             onChange={null}/>
