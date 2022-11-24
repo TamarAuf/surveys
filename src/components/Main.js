@@ -14,7 +14,7 @@ import Result from "./Result"
 const Form = () => {
   const [page, setPage] = useState(0);
 
-  const [Responses,setResponses]  = useState({
+  let [Responses,setResponses]  = useState({
       B1Responses : {
          name: "raz",
          age: "",
@@ -85,7 +85,7 @@ const Form = () => {
             return(<Intro
               nextStep={nextStep}/>);
         case 1:
-            return(<B1  responses={Responses.B1Responses}  setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
+            return(<B1  responses={Responses} setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
             return(<B2
