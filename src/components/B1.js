@@ -1,6 +1,12 @@
 //raz
 const B1 = ({nextStep,setResponses,responses,questions,options}) =>{
-    
+     
+     //const handleChange = e => {
+     // const newResponses = {...responses}
+      //const newB1 = {...newResponses.B1Responses}
+      //newB1.name = e.target.value
+      //setResponses(newResponses)
+     //}
     return (
         <div className= "B1-container">
           <hedar>
@@ -8,7 +14,9 @@ const B1 = ({nextStep,setResponses,responses,questions,options}) =>{
           <h2>Let’s start with getting to know you.</h2>
           </hedar>
           <form className="form">
-            
+
+         
+        
           <label>{questions[0]}</label>
           <input type="text" placeholder="Name or nickname" onChange={(e)=>setResponses({...responses,name: e.target.value})}></input><br/>
 
@@ -22,7 +30,6 @@ const B1 = ({nextStep,setResponses,responses,questions,options}) =>{
           ))}
           
 
-         
           <br/>
          <label>{questions[2]}</label><br/>
           {options.gender.map(result=>(
