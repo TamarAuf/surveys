@@ -1,6 +1,8 @@
 import { useState } from "react"
 
-const B2 = ({nextStep}) => {
+const B2 = ({nextStep, questions}) => {
+    let question = questions.questions;
+
     let cleanOptions=["Tight and dry", "Smooth and Comfortable", "Still greasy and shiny"];
     const [clean, setClean] = useState();
 
@@ -29,9 +31,7 @@ const B2 = ({nextStep}) => {
          <form className="form">  
          <div className="B2-grid-container">
          <div>
-         <label className="question">How does your skin feel after <br />
-         cleaning and before putting <br />
-         moisturizer?</label>
+         <label className="question">{question[0]}</label>
          </div>
          <div>
          {cleanOptions.map(result=>(
@@ -43,8 +43,7 @@ const B2 = ({nextStep}) => {
           ))}
           </div>
           <div>
-          <label className="question">Does your skin usually feel <br />
-          drier in the winter?</label>
+          <label className="question">{question[1]}</label>
           </div>
           <div>
           {winterOptions.map(result=>(
@@ -56,8 +55,7 @@ const B2 = ({nextStep}) => {
           ))}
           </div>
           <div>
-          <label className="question">How does your skin react to <br />
-          the sun?</label>
+          <label className="question">{question[2]}</label>
           </div>
           <div>
           {sunOptions.map(result=>(
@@ -69,7 +67,7 @@ const B2 = ({nextStep}) => {
           ))}
           </div>
           <div>
-          <label className="question">Is your skin sensitive?</label>
+          <label className="question">{question[3]}</label>
           </div>
           <div>
           {sensitiveOptions.map(result=>(
@@ -82,7 +80,7 @@ const B2 = ({nextStep}) => {
           </div>
           </div>
           </form>
-          <button className="btn" onClick={nextStep} tyle={{  width: 126, height: 64, left: 427,top: 1200}}>Next</button>
+          <button className="btn" onClick={nextStep} style={{ left: 427, bottom: 120}}>Next</button>
         </div>
       
       );

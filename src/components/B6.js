@@ -84,7 +84,7 @@ const B6 = ({nextStep}) =>{
         </>
         ))}
       </div> : ""}
-        <button style={{"position": "relative", "top": "-30px", "right": "0px"}} className="btn" onClick={nextStep}>Next</button>
+        <button className="btn" onClick={nextStep} style={{ left: 799, bottom: 120}}>Next</button>
       </div>
       </div>
       );

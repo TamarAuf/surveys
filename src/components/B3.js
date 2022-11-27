@@ -1,6 +1,8 @@
 import { useState } from "react"
 
-const B3 = ({nextStep}) =>{
+const B3 = ({nextStep, questions}) =>{
+    let question = questions.questions;
+
     let agreeOptions=["Yes", "No", "Not Sure"];
     const [agree, setAgree] = useState();
 
@@ -13,9 +15,9 @@ const B3 = ({nextStep}) =>{
          <h1 className="title">Great! Let's compare assumptions</h1>
          <h2 className="subtitle">According to your answers, I can assume that you have skin type</h2>
         </header>
-        <form className="form"> 
+        <form className="B3-grid-container"> 
         <div>
-        <label className="question">Do you agree?</label>
+        <label className="question">{question[0]}</label>
         </div>
         <div>
         {agreeOptions.map(result=>(
@@ -28,7 +30,7 @@ const B3 = ({nextStep}) =>{
         </div> 
         {agree === "No" || agree === "Not Sure" ?  
         <div>
-          <label className="question">Then what kind of skin do you think you have?</label>
+          <label className="question">{question[1]}</label>
           {skinTypes.map(result=>(
           <>
           <input className="radio-buttons" type="radio" value={result} name="radioValues2"
