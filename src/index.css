@@ -33,22 +33,39 @@ code {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows:auto auto auto auto;
+  text-align: left;
+  margin-left: 120px;
+  margin-right: 120px;
+  column-gap: 50px;
+  row-gap: 50px;
 }
 
 .B3-grid-container {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows:auto auto;
+  margin-left: 120px;
+  margin-right: 120px;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.B6-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows:auto auto auto auto auto;
+  margin-left: 120px;
+  margin-right: 120px;
+  column-gap: 50px;
+  row-gap: 25px;
 }
 
 .question {
-  text-align: left;
-  margin-left: 120px;
-  grid-column: 1;
-  position: relative;
+  grid-column: 1
 }
 
 .radio-options{
+  grid-column: 2;
   text-align: right;
   margin-right: 10px;
   grid-column: 2;
@@ -57,6 +74,7 @@ code {
 }
 
 .radio-buttons{
+  grid-column: 2;
   position: relative;
   top: 50px;
 }
@@ -70,7 +88,8 @@ code {
   font-size: 19px;
   border: 2px solid #000000;
   border-radius: 40px;
-  width: 150px;
+  width: 126px;
+  height: 64px;
   position: absolute;
   top: 600px;
   left: 500px;
