@@ -88,10 +88,10 @@ const Form = () => {
             return(<B1  responses={Responses} setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
-            return(<B2
+            return(<B2 responses={Responses} setResponses={setResponses} questions={Questions.B2Questions.questions} options={Questions.B2Questions}
               nextStep={nextStep}/>);
         case 3:
-            return(<B3
+            return(<B3 responses={Responses} setResponses={setResponses} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
               nextStep={nextStep}/>);
         case 4:
             return(<B4 questions={Questions.B4Questions.questions} options={Questions.B4Questions}
@@ -100,7 +100,7 @@ const Form = () => {
             return(<B5  acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
               nextStep={nextStep}/>);
         case 6:
-            return(<B6
+            return(<B6 responses={Responses} setResponses={setResponses} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
               nextStep={nextStep}/>);
         case 7:
             return(<Result/>);

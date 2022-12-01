@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-const B3 = ({nextStep}) =>{
+const B3 = ({nextStep, setResponses, responses, questions, options}) =>{
+
     let agreeOptions=["Yes", "No", "Not Sure"];
     const [agree, setAgree] = useState();
 
@@ -13,12 +14,12 @@ const B3 = ({nextStep}) =>{
          <h1 className="title">Great! Let's compare assumptions</h1>
          <h2 className="subtitle">According to your answers, I can assume that you have skin type</h2>
         </header>
-        <form className="form"> 
+        <form className="B3-grid-container"> 
         <div>
-        <label className="question">Do you agree?</label>
+        <label className="question">{questions[0]}</label>
         </div>
         <div>
-        {agreeOptions.map(result=>(
+        {options.agree.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues1"
           onChange={(e)=>setAgree(e.target.value)}/>
@@ -28,8 +29,8 @@ const B3 = ({nextStep}) =>{
         </div> 
         {agree === "No" || agree === "Not Sure" ?  
         <div>
-          <label className="question">Then what kind of skin do you think you have?</label>
-          {skinTypes.map(result=>(
+          <label className="question">{questions[1]}</label>
+          {options.skinType.map(result=>(
           <>
           <input className="radio-buttons" type="radio" value={result} name="radioValues2"
           onChange={(e)=>setSkinType(e.target.value)}/>
