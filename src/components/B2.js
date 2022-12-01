@@ -1,7 +1,13 @@
 import { useState } from "react"
 
-const B2 = ({nextStep, questions}) => {
-    let question = questions.questions;
+const B2 = ({nextStep, setResponses, responses, questions, options}) => {
+
+  const handleChange = e => {
+     const newResponses = {...responses}
+      const newB2 = {...newResponses.B2Responses}
+      newB2.clean = e.target.value
+      setResponses(newResponses)
+     }
 
     let cleanOptions=["Tight and dry", "Smooth and Comfortable", "Still greasy and shiny"];
     const [clean, setClean] = useState();
@@ -31,22 +37,22 @@ const B2 = ({nextStep, questions}) => {
          <form className="form">  
          <div className="B2-grid-container">
          <div>
-         <label className="question">{question[0]}</label>
+         <label className="question">{questions[0]}</label>
          </div>
          <div>
-         {cleanOptions.map(result=>(
+         {options.clean.map(result=>(
           <>
           <input className="radio-buttons" type="radio" value={result} name="radioValues1"
-          onChange={(e)=>setClean(e.target.value)}/>
+          onChange={(e)=>setResponses({...responses,name: e.target.value})}/>
           <label className="radio-options">{result}</label>
           </>
           ))}
           </div>
           <div>
-          <label className="question">{question[1]}</label>
+          <label className="question">{questions[1]}</label>
           </div>
           <div>
-          {winterOptions.map(result=>(
+          {options.winter.map(result=>(
           <>
           <input className="radio-buttons" type="radio" value={result} name="radioValues2"
           onChange={(e)=>setWinter(e.target.value)}/>
@@ -55,10 +61,10 @@ const B2 = ({nextStep, questions}) => {
           ))}
           </div>
           <div>
-          <label className="question">{question[2]}</label>
+          <label className="question">{questions[2]}</label>
           </div>
           <div>
-          {sunOptions.map(result=>(
+          {options.sun.map(result=>(
           <>
           <input className="radio-buttons" type="radio" value={result} name="radioValues3"
           onChange={(e)=>setSun(e.target.value)}/>
@@ -67,10 +73,10 @@ const B2 = ({nextStep, questions}) => {
           ))}
           </div>
           <div>
-          <label className="question">{question[3]}</label>
+          <label className="question">{questions[3]}</label>
           </div>
           <div>
-          {sensitiveOptions.map(result=>(
+          {options.sensitive.map(result=>(
           <>
           <input className="radio-buttons" type="checkbox" value={result} 
           onChange={(e)=>setSensitive(e.target.value)}/>

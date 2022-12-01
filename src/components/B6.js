@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-const B6 = ({nextStep}) =>{
+const B6 = ({nextStep, setResponses, responses, questions, options}) =>{
+
     const smokeOptions=["Yes", "No", "Only on rare occasions"];
     const [smoke, setSmoke] = useState();
 
@@ -28,7 +29,7 @@ const B6 = ({nextStep}) =>{
         </header>
         <div className="B6-grid-container">
         <div>
-        <p className="question">Are you smoking?</p>
+        <p className="question">Do you smoke?</p>
         </div>
         <div>
         {smokeOptions.map(result=>(

@@ -1,7 +1,6 @@
 import { useState } from "react"
 
-const B3 = ({nextStep, questions}) =>{
-    let question = questions.questions;
+const B3 = ({nextStep, setResponses, responses, questions, options}) =>{
 
     let agreeOptions=["Yes", "No", "Not Sure"];
     const [agree, setAgree] = useState();
@@ -17,10 +16,10 @@ const B3 = ({nextStep, questions}) =>{
         </header>
         <form className="B3-grid-container"> 
         <div>
-        <label className="question">{question[0]}</label>
+        <label className="question">{questions[0]}</label>
         </div>
         <div>
-        {agreeOptions.map(result=>(
+        {options.agree.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues1"
           onChange={(e)=>setAgree(e.target.value)}/>
@@ -30,8 +29,8 @@ const B3 = ({nextStep, questions}) =>{
         </div> 
         {agree === "No" || agree === "Not Sure" ?  
         <div>
-          <label className="question">{question[1]}</label>
-          {skinTypes.map(result=>(
+          <label className="question">{questions[1]}</label>
+          {options.skinType.map(result=>(
           <>
           <input className="radio-buttons" type="radio" value={result} name="radioValues2"
           onChange={(e)=>setSkinType(e.target.value)}/>
