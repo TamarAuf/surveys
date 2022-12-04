@@ -16,7 +16,7 @@ const Form = () => {
 
   let [Responses,setResponses]  = useState({
       B1Responses : {
-         name: "raz",
+         name: "",
          age: "",
         gender: ""
       },
@@ -68,13 +68,20 @@ const Form = () => {
   
   
 
-// function to skip pages 
+// functions to skip pages 
   const nextStep = () => {
     setPage((currPage) => 
     currPage + 1)
   }
 
- 
+  const skipStep = () => {
+    setPage((currPage) => 
+    currPage + 2)
+  }
+
+ const handleChange = (e) =>{
+  setResponses({...Responses,[e.target.name]:e.target.value})
+ }
    
   
         
@@ -85,7 +92,7 @@ const Form = () => {
             return(<Intro
               nextStep={nextStep}/>);
         case 1:
-            return(<B1  responses={Responses} setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
+            return(<B1 handleChange={handleChange} responses={Responses} setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
             return(<B2 responses={Responses} setResponses={setResponses} questions={Questions.B2Questions.questions} options={Questions.B2Questions}
@@ -94,10 +101,10 @@ const Form = () => {
             return(<B3 responses={Responses} setResponses={setResponses} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
               nextStep={nextStep}/>);
         case 4:
-            return(<B4 questions={Questions.B4Questions.questions} options={Questions.B4Questions}
-              nextStep={nextStep}/>);    
+            return(<B4 responses={Responses} setResponses={setResponses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
+              nextStep={nextStep} skipStep={skipStep}/>);    
         case 5:
-            return(<B5  acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
+            return(<B5 responses={Responses} setResponses={setResponses}  acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
               nextStep={nextStep}/>);
         case 6:
             return(<B6 responses={Responses} setResponses={setResponses} questions={Questions.B6Questions.questions} options={Questions.B6Questions}

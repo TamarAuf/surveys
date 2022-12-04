@@ -1,28 +1,30 @@
 //raz
 
-const B4 = ({nextStep,questions,options}) => {
+const B4 = ({nextStep,skipStep,setResponses,responses,questions,options}) => {
 
     
     return (
         <div className="B4-container">
-        <headr> 
-        <h3>Perfect! I'm already getting skincare ideas for you, [Name]!</h3> 
-        <h2 style={{width: 616, height: 62, left:120,top: 168,marginTop:80}}>What are the signs you have or sometimes notice?<br/> 
+        <h1 className="title">Perfect! I'm already getting skincare ideas for you, {responses.name}!</h1> 
+        <h2 className="subtitle" style={{width: 616, height: 62, left:120,top: 168,marginTop:80}}>What are the signs you have or sometimes notice?<br/> 
         Select all the examples that fit</h2>  
-        </headr>  
-     
+        
         <form className="form">
-        <label>{questions[0]}</label>
+        <div className="B2-grid-container">
+       
+        <div><label className="question">{questions[0]}</label></div>  
+        <div>
         {options.ageRrelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
-        onChange={null}/>
+        onChange={(e)=>{setResponses([...responses,...responses.B4Responses.ageRelated,e.target.value])}}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
-
-        <br/>
-        <label>{questions[1]}</label>
+        </div>
+        
+        <div><label className="question">{questions[1]}</label></div>
+        <div>
         {options.acneRelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
@@ -30,9 +32,10 @@ const B4 = ({nextStep,questions,options}) => {
          <label className="radio-options">{result}</label>
          </>
         ))}
+        </div>
         
-        <br/>
-        <label>{questions[2]}</label>
+        <div><label className="question">{questions[2]}</label> </div>
+        <div>
         {options.redness.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
@@ -40,9 +43,10 @@ const B4 = ({nextStep,questions,options}) => {
          <label className="radio-options">{result}</label>
          </>
         ))}
+        </div>
 
-        <br/>
-        <label>{questions[3]}</label>
+        <div><label className="question">{questions[3]}</label> </div>
+        <div>
         {options.flakes.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
@@ -50,9 +54,10 @@ const B4 = ({nextStep,questions,options}) => {
          <label className="radio-options">{result}</label>
          </>
         ))}
-
-        <br/>
-        <label>{questions[4]}</label>
+        </div>
+        
+        <div><label className="question">{questions[4]}</label></div>
+        <div>
         {options.faicalHair.map(result=>(
         <>
         <input className="radio-buttons" type="radio" value={result} 
@@ -60,9 +65,11 @@ const B4 = ({nextStep,questions,options}) => {
          <label className="radio-options">{result}</label>
          </>
         ))}
+        </div>
+        </div>
         </form>
 
-        <button onClick={nextStep}>Next</button>
+        <button className="btn" style={ {marginLeft: 500}} onClick={nextStep}>Next</button>
         </div>
     );
 }

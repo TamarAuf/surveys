@@ -52,10 +52,10 @@
        "skinReact": ["Stress,fatigue","Hormonal changes","Acne scars","Medical issues","Not sure"]
       },
 
-     " Shave": {
+     "Shave": {
         "questions": ["How often do you shave?","Wich type of razor do you use?"],
         "often": ["Every day","Evrey couple of days","Less then once a week","Only shaving specific area such as the neck"],
-       " razor": ["Singale or double-blade manual razor","Multi-blades manual razor","Dry electric shaver","Wet electric shaver"]
+       "razor": ["Singale or double-blade manual razor","Multi-blades manual razor","Dry electric shaver","Wet electric shaver"]
       }
 
     },

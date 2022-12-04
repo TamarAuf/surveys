@@ -28,11 +28,11 @@ const B2 = ({nextStep, setResponses, responses, questions, options}) => {
 
     return (
         <div className="B2-container">
-          <header>
+          <div className="hader">
             <h1 className="title">Nice to meet you, Name!</h1>
             <h2 className="subtitle">I want to help you to choose the most matching skin care <br />
             regimen for you. Please tell me a little about your skin.</h2>
-          </header>
+          </div>
 
          <form className="form">  
          <div className="B2-grid-container">

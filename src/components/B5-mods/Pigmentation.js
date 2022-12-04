@@ -3,9 +3,12 @@ const Pigmentation = ({pigmentation}) =>{
     
     return(
             <div> 
-            <form className="form" style={{marginTop:150}}>
-            <h1>You mentioned you have acne,let's learn more</h1>    
-            <label>{pigmentation.questions[0]}</label>
+            <h2 className="subtitle">You mentioned you have acne,let's learn more</h2>
+
+            <form className="form" style={{marginTop:50}}> 
+            <div className="B2-grid-container">   
+            <div><label>{pigmentation.questions[0]}</label></div>
+            <div>
             {pigmentation.problem.map(result=>(
             <>
             <input className="radio-buttons" type="checkbox" value={result} 
@@ -13,9 +16,10 @@ const Pigmentation = ({pigmentation}) =>{
             <label className="radio-options">{result}</label>
             </>
             ))}
-
-            <br/>
-            <label>{pigmentation.questions[1]}</label>
+            </div>
+            
+            <div><label>{pigmentation.questions[1]}</label></div>
+            <div>
             {pigmentation.sunExposure.map(result=>(
             <>
             <input className="radio-buttons" type="radio" value={result} 
@@ -23,9 +27,10 @@ const Pigmentation = ({pigmentation}) =>{
             <label className="radio-options">{result}</label>
             </>
             ))}
-
-            <br/>
-            <label>{pigmentation.questions[2]}</label>
+            </div>
+            
+            <div><label>{pigmentation.questions[2]}</label></div>
+            <div>
             {pigmentation.skinReact.map(result=>(
             <>
             <input className="radio-buttons" type="checkbox" value={result} 
@@ -33,7 +38,8 @@ const Pigmentation = ({pigmentation}) =>{
             <label className="radio-options">{result}</label>
             </>
             ))}
-            <br/>
+            </div>
+            </div>
             </form>
             </div>
     );

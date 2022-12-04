@@ -1,46 +1,42 @@
 //raz
-const B1 = ({nextStep,setResponses,responses,questions,options}) =>{
+const B1 = ({handleChange,nextStep,setResponses,responses,questions,options}) =>{
      
-     //const handleChange = e => {
-     // const newResponses = {...responses}
-      //const newB1 = {...newResponses.B1Responses}
-      //newB1.name = e.target.value
-      //setResponses(newResponses)
-     //}
+     
     return (
-        <div className= "B1-container">
-          <hedar>
-          <h3>Hi, I’m MeNow! AI-consultant</h3>
-          <h2>Let’s start with getting to know you.</h2>
-          </hedar>
-          <form className="form">
-
-         
-        
-          <label>{questions[0]}</label>
-          <input type="text" placeholder="Name or nickname" onChange={(e)=>setResponses({...responses,name: e.target.value})}></input><br/>
-
+          <div className= "B1-container">
+          <div className="hader">
+          <h1 className="title">Hi, I’m MeNow! AI-consultant</h1>
+          <h2 className="subtitle">Let’s start with getting to know you.</h2>
+          </div>
           
-          <label>{questions[1]}</label><br/>
+          <form className="form">
+          <div className="B2-grid-container"> 
+          <div><label className="question">{questions[0]}</label></div>
+         <div><input name="name" type="text" placeholder="Name or nickname" onChange={e=>handleChange(e)}></input></div>
+         
+         <div><label className="question">{questions[1]}</label></div>
+          <div>
           {options.age.map(result=>(
           <>
-          <input type="radio" value={result} onChange={(e)=>setResponses({...responses,age: e.target.value})} name="radioValues1"/>
-          <label>{result}</label> 
+          <input className="radio-buttons" type="radio"  value={result} onChange={(e)=>handleChange(e)} name="age"/>
+          <label className="radio-options">{result}</label> 
           </>
           ))}
-          
-
-          <br/>
-         <label>{questions[2]}</label><br/>
+          </div>
+       
+         <div><label className="question">{questions[2]}</label></div>
+         <div>
           {options.gender.map(result=>(
           <>
-          <input type="radio" value={result} onChange={null} name="radioValues2"/>
-          <label>{result}</label> 
+          <input className="radio-buttons" type="radio" value={result} onChange={(e)=>handleChange(e)} name="gender"/>
+          <label className="radio-options">{result}</label> 
           </>  
           ))}
+          </div>
+          </div> 
           </form>
          
-         <button onClick={nextStep}>Next</button>
+         <button className="btn" onClick={nextStep}>Next</button>
         </div>
       );
 }
