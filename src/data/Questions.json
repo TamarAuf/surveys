@@ -67,7 +67,7 @@
                   "What impact does it have on your skin?"],
       "smoke": ["Yes", "No", "Only on rare occasions"],
       "allergy": ["Item1", "Item2", "Item3"],
-     " circumstance": ["Pregnant", "Breastfeeding", "Menopause", "None of that", "Prefer not to say"],
+     "circumstance": ["Pregnant", "Breastfeeding", "Menopause", "None of that", "Prefer not to say"],
       "hormonal": ["Yes", "No", "Prefer not to answer"],
       "impact": ["Better", "Worse"]
     }
