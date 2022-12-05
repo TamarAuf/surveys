@@ -1,24 +1,6 @@
 import { useState } from "react"
 
-const B6 = ({nextStep, setResponses, responses, questions, options}) =>{
-
-    const smokeOptions=["Yes", "No", "Only on rare occasions"];
-    const [smoke, setSmoke] = useState();
-
-    let allergyOptions=["Item1", "Item2", "Item3"];
-    const [allergy, setAllergy] = useState();
-
-    const circumstances=["Pregnant", "Breastfeeding", "Menopause", "None of that", "Prefer not to say"];
-    const [circumstance, setCircumstance] = useState();
-
-    const hormonalOptions=["Yes", "No", "Prefer not to answer"];
-    const [hormone, setHormone] = useState();
-
-    const impactCheckboxOptions=["acne", "dry", "sensitive"];
-    const [impactCheckbox, setImpactCheckbox] = useState();
-
-    const impactOptions=["Better", "Worse"];
-    const [impact, setImpact] = useState();
+const B6 = ({handleChange, nextStep, setResponses, responses, questions, options}) =>{
 
     return (
       <div className="B6-container">
@@ -32,10 +14,10 @@ const B6 = ({nextStep, setResponses, responses, questions, options}) =>{
         <p className="question">Do you smoke?</p>
         </div>
         <div>
-        {smokeOptions.map(result=>(
+        {options.smoke.map(result=>(
           <>
-          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues1"
-          onChange={(e)=>setSmoke(e.target.value)}/>
+          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
+          onChange={(e)=>handleChange(e)} name="smoke"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
@@ -44,10 +26,10 @@ const B6 = ({nextStep, setResponses, responses, questions, options}) =>{
         <p className="question">Are you allergic to one of these <br /> items?</p>
         </div>
         <div>
-        {allergyOptions.map(result=>(
+        {options.allergy.map(result=>(
           <>
-          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="checkbox" value={result} name="radioValues2"
-          onChange={(e)=>setAllergy(e.target.value)}/>
+          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="checkbox" value={result} 
+          onChange={(e)=>handleChange(e)} name="allergy"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
@@ -56,32 +38,30 @@ const B6 = ({nextStep, setResponses, responses, questions, options}) =>{
         <p className="question">Are you currently in one of <br /> these circumstances?</p>
         </div>
         <div>
-        {circumstances.map(result=>(
+        {options.circumstance.map(result=>(
           <>
-          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues3"
-          onChange={(e)=>setCircumstance(e.target.value)}/>
+          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
+          onChange={(e)=>handleChange(e)} name="circumstance"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
         </div> 
-        {circumstance === "None of that" || circumstance === "Prefer not to say" ?  
+        {responses.circumstance === "None of that" || responses.circumstance === "Prefer not to say" ?  
         <div>
           <p className="question">Are you taking a hormonal <br /> contraceptive?</p>
-          {hormonalOptions.map(result=>(
+          {options.hormonal.map(result=>(
           <>
-          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues4"
-          onChange={(e)=>setHormone(e.target.value)}/>
+          <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
+          onChange={(e)=>handleChange(e)} name="hormonal"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
         <p className="question">What impact does it have on <br /> your skin?</p>
-        {impactOptions.map(result=>(
+        {options.impact.map(result=>(
         <>
-        <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} name="radioValues5"
-        onChange={(e)=>setImpact(e.target.value)}/>
-        <label style={{"position": "relative", "top": "0px"}} className="radio-options">
-            {{result} === "acne" ? "Better" : "Worse"}
-        </label>
+        <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
+        onChange={(e)=>handleChange(e)} name="impact"/>
+        <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
         </>
         ))}
       </div> : ""}

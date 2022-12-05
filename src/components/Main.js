@@ -59,7 +59,7 @@ const Form = () => {
       },
       B6Responses : {
         smoke: "",
-        allergy: "",
+        allergy: [],
         circumstance: "",
         hormonal: "",
         impact: ""
@@ -95,10 +95,10 @@ const Form = () => {
             return(<B1 handleChange={handleChange} responses={Responses} setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
-            return(<B2 responses={Responses} setResponses={setResponses} questions={Questions.B2Questions.questions} options={Questions.B2Questions}
+            return(<B2 handleChange={handleChange} responses={Responses} setResponses={setResponses} questions={Questions.B2Questions.questions} options={Questions.B2Questions}
               nextStep={nextStep}/>);
         case 3:
-            return(<B3 responses={Responses} setResponses={setResponses} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
+            return(<B3 handleChange={handleChange} responses={Responses} setResponses={setResponses} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
               nextStep={nextStep}/>);
         case 4:
             return(<B4 responses={Responses} setResponses={setResponses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
@@ -107,7 +107,7 @@ const Form = () => {
             return(<B5 responses={Responses} setResponses={setResponses}  acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
               nextStep={nextStep}/>);
         case 6:
-            return(<B6 responses={Responses} setResponses={setResponses} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
+            return(<B6 handleChange={handleChange} responses={Responses} setResponses={setResponses} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
               nextStep={nextStep}/>);
         case 7:
             return(<Result/>);
