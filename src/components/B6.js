@@ -11,7 +11,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
         </header>
         <div className="B6-grid-container">
         <div>
-        <p className="question">Do you smoke?</p>
+        <p className="question">{questions[0]}</p>
         </div>
         <div>
         {options.smoke.map(result=>(
@@ -23,7 +23,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
           ))}
         </div> 
         <div>
-        <p className="question">Are you allergic to one of these <br /> items?</p>
+        <p className="question">{questions[1]}</p>
         </div>
         <div>
         {options.allergy.map(result=>(
@@ -33,9 +33,11 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
-        </div> 
+        </div>
+        {responses.gender === "Male" ? "" :
         <div>
-        <p className="question">Are you currently in one of <br /> these circumstances?</p>
+        <div>
+        <p className="question">{questions[2]}</p>
         </div>
         <div>
         {options.circumstance.map(result=>(
@@ -48,7 +50,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
         </div> 
         {responses.circumstance === "None of that" || responses.circumstance === "Prefer not to say" ?  
         <div>
-          <p className="question">Are you taking a hormonal <br /> contraceptive?</p>
+          <p className="question">{questions[3]}</p>
           {options.hormonal.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
@@ -56,7 +58,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
-        <p className="question">What impact does it have on <br /> your skin?</p>
+        <p className="question">{questions[4]}</p>
         {options.impact.map(result=>(
         <>
         <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
@@ -65,6 +67,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
         </>
         ))}
       </div> : ""}
+      </div>}
         <button className="btn" onClick={nextStep} style={{ left: 799, bottom: 120}}>Next</button>
       </div>
       </div>
