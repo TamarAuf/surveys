@@ -20,7 +20,8 @@
       "sensitive": ["I have irritated skin",
                   "I’m prone to allergic reaction on my skin", 
                   "I have psoriasis",
-                  "I have atopic dermatitis"]
+                  "I have atopic dermatitis",
+                  "None of these"]
     }, 
     "B3Questions": {
       "questions": ["Do you agree?", "Then what kind of skin do you think you have?"],
