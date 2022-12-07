@@ -110,7 +110,7 @@ const Form = () => {
             return(<B6 handleChange={handleChange} responses={Responses} setResponses={setResponses} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
               nextStep={nextStep}/>);
         case 7:
-            return(<Result/>);
+            return(<Result responses={Responses}/>);
         default:
           return(<Intro/>)
     }
