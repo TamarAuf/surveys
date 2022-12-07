@@ -5,7 +5,7 @@ const Shave = ({shave}) =>{
     
     return(<div> 
        
-        <h2 className="subtitle">You mentioned you shave,let’s learn more</h2>
+        <h2 className="subtitle">You mentioned you shave, let’s learn more</h2>
 
         <form className="form" style={{marginTop:50}}>
         <div className="B2-grid-container">    

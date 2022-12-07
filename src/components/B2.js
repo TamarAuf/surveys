@@ -6,8 +6,8 @@ const B2 = ({handleChange, nextStep, setResponses, responses, questions, options
         <div className="B2-container">
           <div className="hader">
             <h1 className="title">Nice to meet you, {responses.name}!</h1>
-            <h2 className="subtitle">I want to help you to choose the most matching skin care <br />
-            regimen for you. Please tell me a little about your skin.</h2>
+            <h2 className="subtitle">I want to help you choose the best skin care regimen for<br />
+             you. Please tell me a little about your skin.</h2>
           </div>
 
          <form className="form">  
