@@ -4,7 +4,7 @@ const Acne = ({acne}) =>{
     return(
             <div> 
            
-            <h2 className="subtitle">You mentioned you have acne,let's learn more</h2>
+            <h2 className="subtitle">You mentioned you have acne, let's learn more</h2>
 
             <form className="form">
             <div className="B2-grid-container"> 

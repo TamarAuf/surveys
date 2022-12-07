@@ -6,8 +6,8 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
       <div className="B6-container">
         <header>
          <h1 className="title">All right, {responses.name}, one last step to go</h1>
-         <p className="subtitle">Lifestyle has a great impact on skin condition. That’s why I’m going to ask <br />
-         you several questions on your every day habits.</p>
+         <p className="subtitle">Lifestyle has a significant impact on skin condition. That’s why I’m going to ask <br />
+         you several questions about your every day habits.</p>
         </header>
         <div className="B6-grid-container">
         <div>
