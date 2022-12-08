@@ -68,7 +68,7 @@ const Form = () => {
   
   
 
-// functions to skip pages 
+// functions to move between pages 
   const nextStep = () => {
     setPage((currPage) => 
     currPage + 1)
@@ -78,9 +78,18 @@ const Form = () => {
     setPage((currPage) => 
     currPage + 2)
   }
+ 
+  // functions to update the responses
+ function updateRadio (e){
+   setResponses({...Responses,[e.target.name]:e.target.value}) // update radio button
+ }
 
- const handleChange = (e) =>{
-  setResponses({...Responses,[e.target.name]:e.target.value})
+ function updateCheckbox (e){  // update checkbox
+    var newArray = {...[e.target.name]}
+    newArray.push(e.target.value)
+    const newObj = {...Responses,[e.target.name]:newArray}
+    setResponses({newObj})
+
  }
    
   
@@ -92,7 +101,7 @@ const Form = () => {
             return(<Intro
               nextStep={nextStep}/>);
         case 1:
-            return(<B1 handleChange={handleChange} responses={Responses} setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
+            return(<B1 updateRadio={updateRadio} responses={Responses} setResponses={setResponses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
             return(<B2 responses={Responses} setResponses={setResponses} questions={Questions.B2Questions.questions} options={Questions.B2Questions}
@@ -101,7 +110,7 @@ const Form = () => {
             return(<B3 responses={Responses} setResponses={setResponses} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
               nextStep={nextStep}/>);
         case 4:
-            return(<B4 responses={Responses} setResponses={setResponses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
+            return(<B4 updateCheckbox={updateCheckbox} responses={Responses} setResponses={setResponses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
               nextStep={nextStep} skipStep={skipStep}/>);    
         case 5:
             return(<B5 responses={Responses} setResponses={setResponses}  acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
@@ -112,7 +121,7 @@ const Form = () => {
         case 7:
             return(<Result/>);
         default:
-          return(<Intro/>)
+          return(<Intro/>);
     }
   }
 

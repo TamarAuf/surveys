@@ -3,7 +3,7 @@ const Pigmentation = ({pigmentation}) =>{
     
     return(
             <div> 
-            <h2 className="subtitle">You mentioned you have acne,let's learn more</h2>
+            <h2 className="subtitle">You mentioned you have pigmentation,let's learn more</h2>
 
             <form className="form" style={{marginTop:50}}> 
             <div className="B2-grid-container">   

@@ -1,5 +1,5 @@
 //raz
-const B1 = ({handleChange,nextStep,setResponses,responses,questions,options}) =>{
+const B1 = ({updateRadio,nextStep,setResponses,responses,questions,options}) =>{
      
      
     return (
@@ -12,13 +12,13 @@ const B1 = ({handleChange,nextStep,setResponses,responses,questions,options}) =>
           <form className="form">
           <div className="B2-grid-container"> 
           <div><label className="question">{questions[0]}</label></div>
-         <div><input name="name" type="text" placeholder="Name or nickname" onChange={e=>handleChange(e)}></input></div>
+         <div><input name="name" type="text" placeholder="Name or nickname" onChange={e=>updateRadio(e)}></input></div>
          
          <div><label className="question">{questions[1]}</label></div>
           <div>
           {options.age.map(result=>(
           <>
-          <input className="radio-buttons" type="radio"  value={result} onChange={(e)=>handleChange(e)} name="age"/>
+          <input className="radio-buttons" type="radio"  value={result} onChange={(e)=>updateRadio(e)} name="age"/>
           <label className="radio-options">{result}</label> 
           </>
           ))}
@@ -28,7 +28,7 @@ const B1 = ({handleChange,nextStep,setResponses,responses,questions,options}) =>
          <div>
           {options.gender.map(result=>(
           <>
-          <input className="radio-buttons" type="radio" value={result} onChange={(e)=>handleChange(e)} name="gender"/>
+          <input className="radio-buttons" type="radio" value={result} onChange={(e)=>updateRadio(e)} name="gender"/>
           <label className="radio-options">{result}</label> 
           </>  
           ))}
