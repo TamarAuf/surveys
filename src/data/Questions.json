@@ -5,22 +5,23 @@
     "B1Questions": {
       "questions": ["What should we call you?","How old are you?","Which gender do you identify with?"],
       "age": ["up to 20","21-35","36-60","60 and up","prefer not to say"],
-      "gender": ["Female","Male","Transwomen","Transman","Non-binary","Prefer not to say"]
+      "gender": ["Female","Male","Transwoman","Transman","Non-binary","Prefer not to say"]
     },
     "B2Questions" : {
-      "questions": ["How does your skin feel after cleaning and before putting moisturizer?",
+      "questions": ["How does your skin feel after cleaning and before moisturizing?",
                   "Does your skin usually feel drier in the winter?",
-                  "How does your skin react to the sun?",
+                  "How does your skin react to sun?",
                   "Is your skin sensitive?"],
-      "clean": ["Tight and dry", "Smooth and Comfortable", "Still greasy and shiny"],
-      "winter": ["Yes", "No", "Not Sure"],
-      "sun": ["I have fair skin that burns easily and hardly tan", 
+      "clean": ["Tight and dry", "Smooth and comfortable", "Still greasy and shiny"],
+      "winter": ["Yes", "No", "Not sure"],
+      "sun": ["I have fair skin that burns easily and hardly tans", 
             "My skin tans easily and rarely burns", 
             "I have dark skin that hardly gets sunburned"],
       "sensitive": ["I have irritated skin",
-                  "I’m prone to allergic reaction on my skin", 
+                  "My skin is prone to allergic reaction", 
                   "I have psoriasis",
-                  "I have atopic dermatitis"]
+                  "I have atopic dermatitis",
+                  "None of these"]
     }, 
     "B3Questions": {
       "questions": ["Do you agree?", "Then what kind of skin do you think you have?"],
@@ -32,42 +33,44 @@
       "ageRrelated": ["Sagging skin","Fine lines","Wrinkles","Pigmentation"],
       "acneRelated":["blackheads","pimples","severe acne"], 
       "redness": ["From time to time my skin is a little red"
-                  ,"Looks like I have sunburn without going to the sun"
-                  ,"I have apparent blood vessels","I was diagnosed with Rosacea "],
-     "flakes":["dundruff in the hair or beard","flakes on the skin","seborrhea"],
-     "faicalHair":["I shave sometimes or as part of daily skin care routine","I have a beard and don’t shave"]
+                  ,"My skin is red most of the time"
+                  ,"I have visible blood vessels","I was diagnosed with Rosacea"],
+     "flakes":["Dandruff in the hair or beard","Flakes on the skin","Seborrhea"],
+     "faicalHair":["I shave sometimes or as part of my daily skin care routine","I have a beard and don’t shave"]
     },
     "B5Questions": {
       "Acne": {
-        "questions": ["do you have pimpels all the time?","What do you fell causes these changes?","How does your skin usually react to skin care products for acne-prone skin?"],
-        "pimpels": ["Only on occasion","Always,but intesity varies in time","Always,int rather consistent manner"],
-        "changes": ["Hormonal changes","Lack of sleep","Wearing a mask","Alimentation","Shaving","not Sure"],
-        "skinReact":["it helps,and my skin fells comfotable","Usually,useless,but my skin fells fine","it works.but leaves my skin feeling dry and itchy","never tried"]
+        "questions": ["Do you have pimples all the time?","What do you feel causes these changes?","How does your skin usually react to skin care products for acne-prone skin?"],
+        "pimpels": ["Only on occasion","Always, but the intensity varies over time","Always, in a rather consistent manner"],
+        "changes": ["Hormonal changes","Lack of sleep","Applying cosmetic products","Wearing a mask","Alimentation",
+        "Weather, seasonal changes","Shaving","Not sure"],
+        "skinReact":["It helps, and my skin feels comfortable","Usually useless, but my skin feels fine",
+        "It works, but leaves my skin feeling dry and itchy","Never tried"]
       },
 
       "Pigmentation": {
-        "questions": ["Wich Pigmentation problem do you suffer from?","Are the pigmentation issues related to sun exposure?","Wich other factors seem to affect the appearance of the spots?"],
-        "problem": ["discoloration","Dark spots"],
-        "sunExposure": ["Yes","No","not sure"],
-       "skinReact": ["Stress,fatigue","Hormonal changes","Acne scars","Medical issues","Not sure"]
+        "questions": ["Which pigmentation problem do you suffer from?","Are the pigmentation issues related to sun exposure?","Which other factors seem to affect the appearance of the spots?"],
+        "problem": ["Discoloration","Dark spots"],
+        "sunExposure": ["Yes","No","Not sure"],
+       "skinReact": ["Stress, fatigue","Hormonal changes","Acne scars","Medical issues","Not sure"]
       },
 
      "Shave": {
-        "questions": ["How often do you shave?","Wich type of razor do you use?"],
-        "often": ["Every day","Evrey couple of days","Less then once a week","Only shaving specific area such as the neck"],
-       "razor": ["Singale or double-blade manual razor","Multi-blades manual razor","Dry electric shaver","Wet electric shaver"]
+        "questions": ["How often do you shave?","Which type of razor do you use?"],
+        "often": ["Every day","Every couple of days","Less then once a week","Only specific area such as the neck"],
+       "razor": ["Single or double-blade manual razor","Multi-blades manual razor","Dry electric shaver","Wet electric shaver"]
       }
 
     },
     "B6Questions" : {
-      "questions": ["Are you smoking?", 
-                  "Are you allergic to one of these items?", 
+      "questions": ["Do you smoke?", 
+                  "Are you allergic to any of these items?", 
                   "Are you currently in one of these circumstances?",
                   "Are you taking a hormonal contraceptive?",
                   "What impact does it have on your skin?"],
       "smoke": ["Yes", "No", "Only on rare occasions"],
       "allergy": ["Item1", "Item2", "Item3"],
-     " circumstance": ["Pregnant", "Breastfeeding", "Menopause", "None of that", "Prefer not to say"],
+     "circumstance": ["Pregnant", "Breastfeeding", "Menopause", "None of that", "Prefer not to say"],
       "hormonal": ["Yes", "No", "Prefer not to answer"],
       "impact": ["Better", "Worse"]
     }
