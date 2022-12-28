@@ -1,10 +1,10 @@
 import { useState } from "react"
 
-const B2 = ({handleChange, nextStep, setResponses, responses, questions, options}) => {
+const B2 = ({updateRadio, updateCheckbox, nextStep, responses, questions, options}) => {
 
     return (
         <div className="B2-container">
-          <div className="hader">
+          <div className="header">
             <h1 className="title">Nice to meet you, {responses.name}!</h1>
             <h2 className="subtitle">I want to help you choose the best skin care regimen for<br />
              you. Please tell me a little about your skin.</h2>
@@ -18,7 +18,7 @@ const B2 = ({handleChange, nextStep, setResponses, responses, questions, options
          <div>
          {options.clean.map(result=>(
           <>
-          <input className="radio-buttons" type="radio" value={result} onChange={(e)=>handleChange(e)} name="clean"/>
+          <input className="radio-buttons" type="radio" value={result} onChange={e=>updateRadio(e)} name="clean"/>
           <label className="radio-options">{result}</label>
           </>
           ))}
@@ -29,8 +29,9 @@ const B2 = ({handleChange, nextStep, setResponses, responses, questions, options
           <div>
           {options.winter.map(result=>(
           <>
-          <input className="radio-buttons" type="radio" value={result} onChange={(e)=>handleChange(e)} name="winter"/>
+          <input className="radio-buttons" type="radio" value={result} onChange={e=>updateRadio(e)} name="winter"/>
           <label className="radio-options">{result}</label>
+          
           </>
           ))}
           </div>
@@ -40,7 +41,7 @@ const B2 = ({handleChange, nextStep, setResponses, responses, questions, options
           <div>
           {options.sun.map(result=>(
           <>
-          <input className="radio-buttons" type="radio" value={result} onChange={(e)=>handleChange(e)} name="sun"/>
+          <input className="radio-buttons" type="radio" value={result} onChange={e=>updateRadio(e)} name="sun"/>
           <label className="radio-options">{result}</label>
           </>
           ))}
@@ -51,7 +52,7 @@ const B2 = ({handleChange, nextStep, setResponses, responses, questions, options
           <div>
           {options.sensitive.map(result=>(
           <>
-          <input className="radio-buttons" type="checkbox" onChange={(e)=>handleChange(e)} name="sensitive"/>
+          <input className="radio-buttons" type="checkbox" onChange={e=>updateCheckbox(e)} name="sensitive"/>
           <label className="radio-options">{result}</label>
           </>
           ))}
