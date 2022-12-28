@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const B3 = ({handleChange, nextStep, setResponses, responses, questions, options}) =>{
+const B3 = ({updateRadio, nextStep, responses, questions, options}) =>{
 
     return (
       <div className="B3-container">
@@ -16,7 +16,7 @@ const B3 = ({handleChange, nextStep, setResponses, responses, questions, options
         {options.agree.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
-          onChange={(e)=>handleChange(e)} name="agree"/>
+          onChange={e=>updateRadio(e)} name="agree"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
@@ -26,7 +26,7 @@ const B3 = ({handleChange, nextStep, setResponses, responses, questions, options
           <label className="question">{questions[1]}</label>
           {options.skinType.map(result=>(
           <>
-          <input className="radio-buttons" type="radio" value={result} onChange={(e)=>handleChange(e)} name="skinType"/>
+          <input className="radio-buttons" type="radio" value={result} onChange={e=>updateRadio(e)} name="skinType"/>
           <label className="radio-options">{result}</label>
           </>
           ))}

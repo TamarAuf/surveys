@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const B6 = ({handleChange, nextStep, setResponses, responses, questions, options}) =>{
+const B6 = ({updateRadio, updateCheckbox, nextStep, responses, questions, options}) =>{
 
     return (
       <div className="B6-container">
@@ -17,7 +17,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
         {options.smoke.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
-          onChange={(e)=>handleChange(e)} name="smoke"/>
+          onChange={e=>updateRadio(e)} name="smoke"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
@@ -29,7 +29,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
         {options.allergy.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="checkbox" value={result} 
-          onChange={(e)=>handleChange(e)} name="allergy"/>
+          onChange={e=>updateCheckbox(e)} name="allergy"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
@@ -43,7 +43,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
         {options.circumstance.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
-          onChange={(e)=>handleChange(e)} name="circumstance"/>
+          onChange={e=>updateRadio(e)} name="circumstance"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
@@ -54,7 +54,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
           {options.hormonal.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
-          onChange={(e)=>handleChange(e)} name="hormonal"/>
+          onChange={e=>updateRadio(e)} name="hormonal"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}
@@ -62,7 +62,7 @@ const B6 = ({handleChange, nextStep, setResponses, responses, questions, options
         {options.impact.map(result=>(
         <>
         <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="radio" value={result} 
-        onChange={(e)=>handleChange(e)} name="impact"/>
+        onChange={e=>updateRadio(e)} name="impact"/>
         <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
         </>
         ))}
