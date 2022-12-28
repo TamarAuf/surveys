@@ -4,7 +4,7 @@ const B2 = ({updateRadio, updateCheckbox, nextStep, responses, questions, option
 
     return (
         <div className="B2-container">
-          <div className="hader">
+          <div className="header">
             <h1 className="title">Nice to meet you, {responses.name}!</h1>
             <h2 className="subtitle">I want to help you choose the best skin care regimen for<br />
              you. Please tell me a little about your skin.</h2>
