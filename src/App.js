@@ -1,5 +1,5 @@
 import './App.css';
-import Form from "./components/Main"
+import Form from "./components/Pages/Main"
 
 
 const  App = () => {

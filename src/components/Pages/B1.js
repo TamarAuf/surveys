@@ -1,5 +1,5 @@
 //raz
-const B1 = ({updateRadio,nextStep,setResponses,responses,questions,options}) =>{
+const B1 = ({updateRadio,nextStep,questions,options}) =>{
      
      
     return (

@@ -1,6 +1,6 @@
 //raz
 
-const B4 = ({updateCheckbox,nextStep,skipStep,setResponses,responses,questions,options}) => {
+const B4 = ({updateCheckbox,nextStep,skipStep,responses,questions,options}) => {
 
     
     return (
@@ -69,7 +69,7 @@ const B4 = ({updateCheckbox,nextStep,skipStep,setResponses,responses,questions,o
         </div>
         </form>
 
-        <button className="btn" style={ {marginLeft: 500}} onClick={responses.ageRelated === 0 ? nextStep : skipStep }>Next</button> 
+        <button className="btn" style={ {marginLeft: 500}} onClick={responses.name ? nextStep : skipStep}>Next</button> 
         </div> 
     );
 }
