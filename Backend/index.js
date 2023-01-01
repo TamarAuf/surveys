@@ -32,4 +32,4 @@ app.get('*', (req, res) => {
   });
 
 //const port = process.env.PORT || 3000;
-app.listen(5000, () => console.log(`Listening on port 5000`));
+console.log(` app is listening on port ${port}`)
