@@ -1,14 +1,15 @@
 import { useState } from "react" 
-import Questions from '../../data/Questions.json'
-import responses from '../../data/Responses.json'
-import Intro from "./Intro"
-import B1 from "./B1.js"
-import B2 from "./B2"
-import B3 from "./B3"
-import B4 from "./B4"
-import B5 from "./B5"
-import B6 from "./B6"
-import Result from "./Result"
+import Questions from '../data/Questions.json'
+import responses from '../data/Responses.json'
+import Intro from "./Pages/Intro"
+import B1 from "./Pages/B1.js"
+import B2 from "./Pages/B2"
+import B3 from "./Pages/B3"
+import B4 from "./Pages/B4"
+import B5 from "./Pages/B5"
+import B6 from "./Pages/B6"
+import Result from "./Pages/Result"
+import Knn from "../Scripts/Knn"
 
 
 
@@ -16,8 +17,9 @@ const Main = () => {
   const [page, setPage] = useState(0);
 
   let [Responses,setResponses]  = useState(responses)
-     
   
+
+
 
 // functions to move between pages 
   const nextStep = () => {
