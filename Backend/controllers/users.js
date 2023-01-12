@@ -1,7 +1,7 @@
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 
 const { NODE_ENV, JWT_SECRET } = process.env;
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const NotFoundError = require("../errors/not-found-err");
 const ConflictError = require("../errors/conflict-err");
@@ -16,17 +16,22 @@ const getAllUsers = (req, res, next) => {
 };
 
 const getUser = (req, res, next) => {
-  User.findById(req.params.id)
+  User.findById({_id: req.params.userId}) 
     .orFail(() => {
-      throw new NotFoundError("user not found");
+      throw new NotFoundError();
     })
     .then((user) => {
       if (user) {
-        res.status(200).send({ data: user });
+        res.status(200).send(user);
       }
-    })
+    }) 
+    .catch((err) => {
+      if(err.statusCode === 404) throw new NotFoundError("user not found")
+      else throw new BadReqError(`Invalid id`);
+    })   
     .catch(next);
 };
+
 
 const createUser = (req, res, next) => {
   const { email, password, name } = req.body;
@@ -37,7 +42,7 @@ const createUser = (req, res, next) => {
         email,
         password: hash,
         name,
-      })
+      }),
     )
     .then((user) => {
       res.status(201).send({
@@ -47,12 +52,12 @@ const createUser = (req, res, next) => {
       });
     })
     .catch((err) => {
-      if (err.name === 'MongoServerError') {
+      if (err.name === "MongoServerError") {
         throw new ConflictError(
-          'The request could not be completed due to a conflict with the current state of the target resource'
+          "The request could not be completed due to a conflict with the current state of the target resource",
         );
-      } else if (err.name === 'ValidationError') {
-        throw new BadReqError('email and password required');
+      } else if (err.name === "ValidationError") {
+        throw new BadReqError("email and password required");
       }
     })
     .catch(next);
@@ -64,10 +69,10 @@ const login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        NODE_ENV === 'production' ? JWT_SECRET : 'super-strong-secret',
+        NODE_ENV === "production" ? JWT_SECRET : "super-strong-secret",
         {
-          expiresIn: '7d',
-        }
+          expiresIn: "7d",
+        },
       );
       res.send({ token });
     })
@@ -78,5 +83,5 @@ module.exports = {
   getUser,
   createUser,
   getAllUsers,
-  login
+  login,
 };
