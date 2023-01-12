@@ -19,7 +19,7 @@ app.use(cors());
 app.options("*", cors());
 
 mongoose.connect(
-  NODE_ENV === "production" ? DB_ADRESS : "mongodb+srv://db_admin:FsYxEvQt9NSPaSQ7@bioactivitiescluster.jsexwee.mongodb.net/RMSTest",
+  NODE_ENV === "production" ? DB_ADRESS : "mongodb://localhost:27017/survey",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
