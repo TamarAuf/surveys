@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getProductScores, getAllProductScores } = require('../controllers/users');
+const { getProductScores } = require('../controllers/product_scores');
 
 router.get('/product_scores/:id', getProductScores);
 
