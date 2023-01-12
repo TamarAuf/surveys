@@ -1,0 +1,51 @@
+{
+    "B1Responses" : {
+        "name": "",
+        "age": "",
+       "gender": ""
+     },
+     "B2Responses" : {
+       "clean": "",
+      " winter": "",
+       "sun": "",
+      " sensitive": []
+     },
+     "B3Responses" : {
+       "agree": "",
+       "skinType": ""
+     },
+     "B4Responses" : {
+    " ageRelated":[],
+     "acneRelated":[],
+     "redness":[],
+     "flakes":[],
+     "facialHair":""
+ 
+     },
+     "B5Responses" : {
+       "Acne": {
+        " pimpels": "",
+         "changes": [],
+         "skinReact": ""
+       },
+ 
+      " Pigmentation" : {
+         "problem": [],
+         "sunExposure": "",
+        " otherFactor": []
+       },
+ 
+      " Shave" : {
+        " often": "",
+         "razor": "" 
+       }
+ 
+     },
+    " B6Responses" : {
+       "smoke": "",
+      " allergy": [],
+      " circumstance": "",
+       "hormonal": "",
+       "impact": ""
+     }
+}

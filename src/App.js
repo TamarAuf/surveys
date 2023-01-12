@@ -1,8 +1,6 @@
 import './App.css';
-import "./style.css"
-import Intro from "./components/Intro" 
-import Form from "./components/Form"
-import MainForm from './components/MainForm';
+import Form from "./components/Main"
+
 
 const  App = () => {
   return (

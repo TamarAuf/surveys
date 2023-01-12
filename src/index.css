@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Poppins', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +15,101 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.title{
+  text-align: left;
+  margin-left: 120px;
+  font-size: 40px;
+}
+
+.subtitle{
+  text-align: left;
+  margin-left: 120px;
+  font-size: 24px;
+}
+
+.text{
+  position: absolute;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.B2-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: left;
+  margin-left: 30px;
+  margin-right: 120px;
+  column-gap: 10px;
+  row-gap: 50px;
+}
+
+.B3-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: left;
+  margin-left: 120px;
+  margin-right: 120px;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.B6-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: left;
+  margin-left: 120px;
+  margin-right: 120px;
+  column-gap: 50px;
+  row-gap: 25px;
+}
+
+.B5-container{
+  display: grid;
+}
+
+.question {
+  grid-column: 1
+}
+
+/* .radio-options{
+}
+
+.radio-buttons{
+} */
+
+.btn {
+  background-color: white; 
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 19px;
+  border: 2px solid #000000;
+  border-radius: 40px;
+  width: 126px;
+  height: 64px;
+  position: absolute;
+  top: 600px;
+  left: 500px;
+}
+
+ .btn-corner {
+  position: relative;
+  bottom: 20px;
+  
+
+  background-color: white; 
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 19px;
+  border: 2px solid #000000;
+  border-radius: 40px;
+  width: 126px;
+  height: 64px;
 }
