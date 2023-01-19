@@ -1,6 +1,8 @@
 const router = require('express').Router();
-const { getProductScores } = require('../controllers/product_scores');
+const { getAllProductScores, getScoresByType, getProduct } = require('../controllers/product_scores');
 
-router.get('/product_scores/:id', getProductScores);
+router.get('/product_scores', getAllProductScores);
+router.get('/product_scores/:type', getScoresByType);
+router.get('/product_scores/:id', getProduct);
 
 module.exports = router;
