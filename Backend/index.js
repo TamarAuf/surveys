@@ -5,6 +5,7 @@ const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { errors } = require("celebrate");
+const { requestLogger, errorLogger } = require("./logs/logger");
 const limiter = require("./middleware/limiter");
 const routes = require("./routes/index");
 
@@ -33,6 +34,8 @@ mongoose.connect(
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(requestLogger);
+
 app.use(limiter);
 
 app.use("/", routes);
@@ -40,6 +43,8 @@ app.use("/", routes);
 app.get("*", (req, res) => {
   res.status(404).send({ message: "Requested resource not found" });
 });
+
+app.use(errorLogger);
 
 app.use(errors());
 
