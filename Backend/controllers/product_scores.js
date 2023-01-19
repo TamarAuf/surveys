@@ -1,6 +1,7 @@
 const NotFoundError = require("../errors/not-found-err");
 const ProductScores = require("../models/product_scores");
 
+
 const getAllProductScores = (req, res, next) => {
   ProductScores.find()
     .then((productScores) => {
