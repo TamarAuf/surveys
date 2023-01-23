@@ -2,7 +2,8 @@
     "B1Responses" : {
         "name": "",
         "age": "",
-       "gender": ""
+       "gender": "",
+       "email": ""
      },
      "B2Responses" : {
        "clean": "",
