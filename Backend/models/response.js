@@ -122,13 +122,10 @@ const responseSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",   
   },
-
-  //   type: String,
-  //   required: true,
-  //   minlength: 2,
-  //   maxlength: 30,
-  //   default: "",
-  //   select: true,
+  recommendation: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "recommendation",   
+  },
 });
 
 module.exports = mongoose.model("response", responseSchema);
