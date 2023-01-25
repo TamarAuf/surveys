@@ -1,7 +1,6 @@
 const NotFoundError = require("../errors/not-found-err");
 const ProductScores = require("../models/product_scores");
 
-
 const getAllProductScores = (req, res, next) => {
   ProductScores.find()
     .then((productScores) => {
@@ -11,7 +10,7 @@ const getAllProductScores = (req, res, next) => {
 };
 
 const getScoresByType = (req, res, next) => {
-  ProductScores.find({type : req})
+  ProductScores.find({ type: req.params.type })
     .orFail(() => {
       throw new NotFoundError("product not found");
     })
@@ -24,13 +23,13 @@ const getScoresByType = (req, res, next) => {
 };
 
 const getProduct = (req, res, next) => {
-  ProductScores.findById(req.params.id)
+  ProductScores.findById({ _id: req.params.productId })
     .orFail(() => {
       throw new NotFoundError("product not found");
     })
     .then((product) => {
       if (product) {
-        res.status(200).send({ data: product });
+        res.status(200).send(product);
       }
     })
     .catch(next);
@@ -39,5 +38,5 @@ const getProduct = (req, res, next) => {
 module.exports = {
   getAllProductScores,
   getScoresByType,
-  getProduct
+  getProduct,
 };
