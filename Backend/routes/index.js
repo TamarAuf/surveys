@@ -4,14 +4,16 @@ const auth = require('../middleware/auth');
 const login = require('./login');
 const signup = require('./signup');
 const users = require('./users');
-const productScores = require('./product_scores');
-const authResponse = require('./createAuthResponse');
 const allResponses = require('./allResponses');
+const product_scores = require('./product_scores')
+const recommedation = require('./recommedation')
+const authResponse = require('./createAuthResponse');
 
 router.use('/', signup);
 router.use('/', allResponses);
 router.use('/', users);
-router.use('/', productScores);
+router.use('/', product_scores);
+router.use('/', recommedation);
 router.use(auth);
 router.use('/', login);
 router.use('/', authResponse);

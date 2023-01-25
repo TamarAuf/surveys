@@ -9,19 +9,21 @@ function euclideanDistance(point1, point2) {
     return Math.sqrt(sum);
   }
   
-  // Find the k nearest neighbors of a given point
-  function findKNN(point, points, k) {
+  /// summery: Find the nearest product to recommend to the user from a given product  list
+  /// input: User scores vector,list of products scores vector of the given category
+  /// output: the closest product from the products scores vector
+  function findKNN(userScores, productScoresList, k) {
     // Calculate distances between the given point and all other points
-    const distances = points.map(p => ({
+    const distances = productScoresList.map(p => ({
       point: p,
-      distance: euclideanDistance(point, p)
+      distance: euclideanDistance(userScores, p)
     }));
   
     // Sort the points by ascending distance
     distances.sort((a, b) => a.distance - b.distance);
   
     // Return the k nearest neighbors
-    return distances.slice(0, k).map(d => d.point);
+    return distances[0].point 
   }
   
 

@@ -1,6 +1,6 @@
 const Response = require("../models/response");
 
-const getResponse = (req, res, next) => {
+const getResponseByUserId = (req, res, next) => {
   Response.find({ userID: req.user._id })
     .then((response) => {
       res.status(200).send(response);
@@ -66,7 +66,7 @@ const createResponse = (req, res, next) => {
 };
 
 module.exports = {
-  getResponse,
+  getResponseByUserId,  
   getAllResponses,
   createAuthResponse,
   createResponse,

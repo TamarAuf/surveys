@@ -1,12 +1,13 @@
 const router = require("express").Router();
 const { celebrate, Joi } = require("celebrate");
 const {
-  getResponse,
+  getResponseByUserId,  
   getAllResponses,
   createResponse,
 } = require("../controllers/responses");
 
-router.get("/response", getResponse);
+router.get("/responseByUser", getResponseByUserId);
+
 
 router.get("/allResponses", getAllResponses);
 
