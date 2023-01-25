@@ -25,7 +25,11 @@ mongoose.connect(
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
+  () => {
+    console.log("connected");
+  }
 );
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
