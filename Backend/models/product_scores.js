@@ -5,6 +5,10 @@ const productScoresSchema = new mongoose.Schema({
     type: String,
     immutable: true
   },
+  type: {
+    type: String,
+    immutable: true
+  },
   dandruff: {
     type: Number,
     immutable: true
