@@ -22,7 +22,7 @@ function euclideanDistance(point1, point2) {
     // Sort the points by ascending distance
     distances.sort((a, b) => a.distance - b.distance);
   
-    // Return the k nearest neighbors
+    // Return the k nearest neighbor
     return distances[0].point 
   }
   
@@ -33,7 +33,7 @@ function euclideanDistance(point1, point2) {
   const points = [[1, 1], [2, 2], [3, 3], [4, 4]];
   const k = 2;
   const nearestNeighbors = findKNN([0, 0], points, k);
-  console.log(nearestNeighbors); // Output: [[1, 1], [2, 2]]
+  console.log(nearestNeighbors); // Output: [[1, 1],]
 
 
   
