@@ -17,12 +17,12 @@ const B4 = ({updateCheckbox,nextStep,skipStep,responses,questions,options}) => {
         {options.ageRrelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" name="ageRelated" value={result} 
-        onChange={e=>updateCheckbox(e)}/>
+         onChange={e=>updateCheckbox(e)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
         </div>
-        
+         
         <div><label className="question">{questions[1]}</label></div>
         <div>
         {options.acneRelated.map(result=>(

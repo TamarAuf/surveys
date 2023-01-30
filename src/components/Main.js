@@ -38,11 +38,22 @@ const Main = () => {
  }
 
  function updateCheckbox (e){  
-    var newArray = [{...[e.target.name]}]
-    newArray.push(e.target.value)
+    const newArray = [...[e.target.name]]
+    // add to array if item is checked
+    if(e.target.checked)
+    {
+      newArray.push(e.target.value)
+    }
+    // remove from array if item is unchecked
+    else
+    {
+      const index = newArray.indexOf(e.target.value)
+      newArray.splice(index,1)
+      
+    }
+    
     const newObj = {...Responses,[e.target.name]:newArray}
-    setResponses({newObj})
-
+    setResponses(newObj)
  }
    
   
@@ -57,7 +68,7 @@ const Main = () => {
             return(<B1 updateRadio={updateRadio} responses={responses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
-            return(<B2 updateRadio={updateRadio} responses={responses} questions={Questions.B2Questions.questions} options={Questions.B2Questions}
+            return(<B2 updateRadio={updateRadio} updateCheckbox={updateCheckbox} responses={responses} questions={Questions.B2Questions.questions} options={Questions.B2Questions}
               nextStep={nextStep}/>);
         case 3:
             return(<B3 updateRadio={updateRadio} responses={responses} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
