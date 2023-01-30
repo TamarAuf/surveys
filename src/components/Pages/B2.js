@@ -72,14 +72,15 @@ const B2 = ({updateRadio, updateCheckbox, nextStep, responses, questions, option
           </>
           ))}
           </div>
-          {/* {responses.sensitive[0] === !null ? updateScores(2) : ""} */}
+          {/* {responses.sensitive[0] === "I have irritated skin" ? updateScores(2) : ""}  */}
+          {/* {console.log("type: " + typeof responses.sensitive)} */}
           {console.log("log3 =" + skinTypeScores[0] + skinTypeScores[1] + skinTypeScores[2])}
           </div>
           </form>
           {calculateSkinType()}
           {/* {updateSkinType} */}
           {console.log("log4 =" + skinTypeScores[0] + skinTypeScores[1] + skinTypeScores[2])}
-          {console.log("type =" + skinType[0] + skinType[1])}
+          {console.log("type = " + skinType[0] + skinType[1])}
           <button className="btn" onClick={nextStep} style={{ left: 427, bottom: 120}}>Next</button>
         </div>
       
