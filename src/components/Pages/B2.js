@@ -80,7 +80,7 @@ const B2 = ({updateRadio, updateCheckbox, nextStep, responses, questions, option
           {calculateSkinType()}
           {/* {updateSkinType} */}
           {console.log("log4 =" + skinTypeScores[0] + skinTypeScores[1] + skinTypeScores[2])}
-          {console.log("type =" + skinType[0] + skinType[1])}
+          {console.log("type = " + skinType[0] + skinType[1])}
           <button className="btn" onClick={nextStep} style={{ left: 427, bottom: 120}}>Next</button>
         </div>
       
