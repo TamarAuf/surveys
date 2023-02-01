@@ -11,7 +11,7 @@ const routes = require("./routes/index");
 
 dotenv.config();
 
-const { PORT = 3000, NODE_ENV, DB_ADRESS } = process.env;
+const { PORT = 3001, NODE_ENV, DB_ADRESS } = process.env;
 
 const app = express();
 
@@ -56,5 +56,5 @@ app.use((err, req, res, next) => {
   });
 });
 
-//const port = process.env.PORT || 3000;
+//const port = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
