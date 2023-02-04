@@ -9,7 +9,7 @@ import B4 from "./Pages/B4"
 import B5 from "./Pages/B5"
 import B6 from "./Pages/B6"
 import Result from "./Pages/Result"
-import Knn from "../Scripts/Knn"
+
 
 
 
@@ -37,15 +37,23 @@ const Main = () => {
    setResponses({...Responses,[e.target.name]:e.target.value}) 
  }
 
- function updateCheckbox (e){  
-    var newArray = [{...[e.target.name]}]
-    newArray.push(e.target.value)
+ function updateCheckbox (e){ 
+    const newArray = [...[e.target.name]]
+    // add to array if item is checked
+    if(e.target.checked)
+    {
+      newArray.push(e.target.value)
+    }
+    // remove from array if item is unchecked
+    else
+    {
+      const index = newArray.indexOf(e.target.value)
+      newArray.splice(index,1)
+      
+    }
+    
     const newObj = {...Responses,[e.target.name]:newArray}
     setResponses(newObj)
- }
-
- function updateSkinType (skinType, isSensitive){
-  setResponses({...Responses, skinType: skinType, isSensitive: isSensitive});
  }
    
   const PageDisplay = () => {
@@ -54,7 +62,7 @@ const Main = () => {
             return(<Intro
               nextStep={nextStep}/>);
         case 1:
-            return(<B1 updateRadio={updateRadio} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
+            return(<B1 updateRadio={updateRadio} responses={responses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
             return(<B2 updateRadio={updateRadio} updateCheckbox={updateCheckbox} updateSkinType={updateSkinType} 
@@ -64,11 +72,11 @@ const Main = () => {
             return(<B3 updateRadio={updateRadio} updateSkinType={updateSkinType} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
               responses={Responses} nextStep={nextStep}/>);
         case 4:
-            return(<B4 updateCheckbox={updateCheckbox} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
-              responses={Responses} nextStep={nextStep} skipStep={skipStep}/>);    
+            return(<B4 updateCheckbox={updateCheckbox} responses={responses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
+              nextStep={nextStep} skipStep={skipStep}/>);    
         case 5:
-            return(<B5 updateRadio={updateRadio} acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
-              responses={Responses} nextStep={nextStep}/>);
+            return(<B5 updateRadio={updateRadio} responses={responses} acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
+              nextStep={nextStep}/>);
         case 6:
             return(<B6 updateRadio={updateRadio} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
               responses={Responses} nextStep={nextStep}/>);

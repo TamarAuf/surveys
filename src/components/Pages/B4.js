@@ -1,6 +1,6 @@
 //raz
 
-const B4 = ({updateCheckbox,nextStep,skipStep,responses,questions,options}) => {
+const B4 = ({updateCheckbox,updateRadio,nextStep,skipStep,responses,questions,options}) => {
 
     
     return (
@@ -17,18 +17,18 @@ const B4 = ({updateCheckbox,nextStep,skipStep,responses,questions,options}) => {
         {options.ageRrelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" name="ageRelated" value={result} 
-        onChange={e=>updateCheckbox(e)}/>
+         onChange={e=>updateCheckbox(e)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
         </div>
-        
+         
         <div><label className="question">{questions[1]}</label></div>
         <div>
         {options.acneRelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
-        onChange={null}/>
+        onChange={e=>updateCheckbox(e)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
@@ -39,7 +39,7 @@ const B4 = ({updateCheckbox,nextStep,skipStep,responses,questions,options}) => {
         {options.redness.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
-        onChange={null}/>
+        onChange={e=>updateCheckbox(e)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
@@ -50,7 +50,7 @@ const B4 = ({updateCheckbox,nextStep,skipStep,responses,questions,options}) => {
         {options.flakes.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" value={result} 
-        onChange={null}/>
+        onChange={e=>updateCheckbox(e)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
@@ -61,7 +61,7 @@ const B4 = ({updateCheckbox,nextStep,skipStep,responses,questions,options}) => {
         {options.faicalHair.map(result=>(
         <>
         <input className="radio-buttons" type="radio" value={result} 
-        onChange={null}/>
+         onChange={e=>updateRadio(e)} name="facialHair"/>
          <label className="radio-options">{result}</label>
          </>
         ))}
