@@ -18,7 +18,6 @@ const B3 = ({updateRadio, updateSkinType, nextStep, responses, questions, option
         <div>
         <label className="question">{questions[0]}</label>
         </div>
-        {console.log("results " + responses.skinType + responses.isSensitive)}
         <div>
         {options.agree.map(result=>(
           <>

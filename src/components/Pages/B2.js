@@ -40,8 +40,6 @@ const B2 = ({updateRadio, updateCheckbox, updateSkinType, nextStep, responses, q
           </>))}
           </div>
           {responses.clean === "Tight and dry" ? updateScores(0) : responses.clean === "Still greasy and shiny" ? updateScores(1) : console.log("none")}
-      
-          {console.log("log1 =" + scores[0] + scores[1] + scores[2])}
           <div>
           <label className="question">{questions[1]}</label>
           </div>
@@ -54,7 +52,6 @@ const B2 = ({updateRadio, updateCheckbox, updateSkinType, nextStep, responses, q
           ))}
           </div>
           {responses.winter === "Yes" ? updateScores(0) : console.log("none")}
-          {console.log("log2 =" + scores[0] + scores[1] + scores[2])}
           <div>
           <label className="question">{questions[2]}</label>
           </div>
@@ -81,12 +78,9 @@ const B2 = ({updateRadio, updateCheckbox, updateSkinType, nextStep, responses, q
           {Array.isArray(responses.sensitive) ? responses.sensitive[1] === "None of these" ?
                 console.log("none of these") : updateScores(2) : console.log("not a array")
             }
-          {console.log("log3 =" + scores[0] + scores[1] + scores[2])}
           </div>
           </form>
           {calculateSkinType()}
-          {console.log("log4 =" + scores[0] + scores[1] + scores[2])}
-          {console.log("type = " + skinType + isSensitive)}
           <button className="btn" onClick={clickResponse} style={{ left: 427, bottom: 120}}>Next</button>
         </div>
       
