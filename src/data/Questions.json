@@ -24,9 +24,11 @@
                   "None of these"]
     }, 
     "B3Questions": {
-      "questions": ["Do you agree?", "Then what kind of skin do you think you have?"],
+      "questions": ["Do you agree?", "Then what kind of skin do you think you have?", 
+      "Do you have sensitive skin?"],
       "agree": ["Yes", "No", "Not Sure"],
-      "skinType": ["Dry", "Oily", "Combination", "Sensitive", "Normal"]
+      "skinType": ["Dry", "Oily", "Combination", "Sensitive", "Normal"],
+      "isSensitive": ["Yes", "No"]
     },
     "B4Questions": {
      "questions": ["age-related","acne-related","redness","flakes","facial hair"],

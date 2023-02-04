@@ -1,12 +1,18 @@
-import { useState } from "react"
 
-const B3 = ({updateRadio, nextStep, responses, questions, options}) =>{
 
+const B3 = ({updateRadio, updateSkinType, nextStep, responses, questions, options}) =>{
+  const clickResponse = () => {
+    responses.agree === "No" || responses.agree === "Not Sure" ? 
+    updateSkinType(responses.newSkinType, responses.newSensitive) 
+    : console.log("agreed");
+    nextStep();
+  }
     return (
       <div className="B3-container">
         <header>
          <h1 className="title">Great! Let's compare assumptions</h1>
-         <h2 className="subtitle">According to your answers, I can assume that you have skin type</h2>
+         <h2 className="subtitle">According to your answers, I can assume that you have 
+         {" " + responses.skinType} {responses.isSensitive ? "and sensitive" : ""} skin</h2>
         </header>
         <form className="B3-grid-container"> 
         <div>
@@ -23,16 +29,27 @@ const B3 = ({updateRadio, nextStep, responses, questions, options}) =>{
         </div> 
         {responses.agree === "No" || responses.agree === "Not Sure" ?  
         <div>
+          <div>
           <label className="question">{questions[1]}</label>
           {options.skinType.map(result=>(
           <>
-          <input className="radio-buttons" type="radio" value={result} onChange={e=>updateRadio(e)} name="skinType"/>
+          <input className="radio-buttons" type="radio" value={result} onChange={e=>updateRadio(e)} name="newSkinType"/>
           <label className="radio-options">{result}</label>
           </>
           ))}
+          </div>
+          <div>
+          <label className="question">{questions[2]}</label>
+          {options.isSensitive.map(result=>(
+          <>
+          <input className="radio-buttons" type="radio" value={result} onChange={e=>updateRadio(e)} name="newSensitive"/>
+          <label className="radio-options">{result}</label>
+          </>
+          ))}
+          </div>
         </div> : ""}
         </form>
-        <button className="btn" onClick={nextStep}>Next</button>
+        <button className="btn" onClick={clickResponse}>Next</button>
       </div>
       );
 }

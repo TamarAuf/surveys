@@ -37,7 +37,7 @@ const Main = () => {
    setResponses({...Responses,[e.target.name]:e.target.value}) 
  }
 
- function updateCheckbox (e){  
+ function updateCheckbox (e){ 
     const newArray = [...[e.target.name]]
     // add to array if item is checked
     if(e.target.checked)
@@ -56,9 +56,6 @@ const Main = () => {
     setResponses(newObj)
  }
    
-  
-        
-
   const PageDisplay = () => {
     switch (page){
         case 0:
@@ -68,11 +65,12 @@ const Main = () => {
             return(<B1 updateRadio={updateRadio} responses={responses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
-            return(<B2 updateRadio={updateRadio} updateCheckbox={updateCheckbox} responses={responses} questions={Questions.B2Questions.questions} options={Questions.B2Questions}
-              nextStep={nextStep}/>);
+            return(<B2 updateRadio={updateRadio} updateCheckbox={updateCheckbox} updateSkinType={updateSkinType} 
+              questions={Questions.B2Questions.questions} options={Questions.B2Questions} 
+              responses={Responses} setResponses={setResponses} nextStep={nextStep}/>);
         case 3:
-            return(<B3 updateRadio={updateRadio} responses={responses} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
-              nextStep={nextStep}/>);
+            return(<B3 updateRadio={updateRadio} updateSkinType={updateSkinType} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
+              responses={Responses} nextStep={nextStep}/>);
         case 4:
             return(<B4 updateCheckbox={updateCheckbox} responses={responses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
               nextStep={nextStep} skipStep={skipStep}/>);    
@@ -80,8 +78,8 @@ const Main = () => {
             return(<B5 updateRadio={updateRadio} responses={responses} acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
               nextStep={nextStep}/>);
         case 6:
-            return(<B6 updateRadio={updateRadio} responses={responses} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
-              nextStep={nextStep}/>);
+            return(<B6 updateRadio={updateRadio} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
+              responses={Responses} nextStep={nextStep}/>);
         case 7:
             return(<Result responses={Responses} updateRadio={updateRadio}/>);
         default:

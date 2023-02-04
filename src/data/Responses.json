@@ -7,13 +7,16 @@
      },
      "B2Responses" : {
        "clean": "",
-      " winter": "",
+      "winter": "",
        "sun": "",
-      " sensitive": []
+      "sensitive": [],
+      "skinType": "",
+      "isSensitive": false
      },
      "B3Responses" : {
        "agree": "",
-       "skinType": ""
+       "newSkinType": "",
+       "newSensitive": ""
      },
      "B4Responses" : {
      "ageRelated":[],
@@ -25,7 +28,7 @@
      },
      "B5Responses" : {
        "Acne": {
-        " pimpels": "",
+        "pimples": "",
          "changes": [],
          "skinReact": ""
        },
@@ -33,19 +36,19 @@
       " Pigmentation" : {
          "problem": [],
          "sunExposure": "",
-        " otherFactor": []
+        "otherFactor": []
        },
  
-      " Shave" : {
-        " often": "",
+      "Shave" : {
+        "often": "",
          "razor": "" 
        }
  
      },
-    " B6Responses" : {
+    "B6Responses" : {
        "smoke": "",
-      " allergy": [],
-      " circumstance": "",
+      "allergy": [],
+      "circumstance": "",
        "hormonal": "",
        "impact": ""
      }

@@ -1,20 +1,24 @@
-import { useState } from "react"
-
-const B2 = ({updateRadio, updateCheckbox, nextStep, responses, questions, options}) => {
+const B2 = ({updateRadio, updateCheckbox, updateSkinType, nextStep, responses, questions, options}) => {
     //array values: Dry, oily, sensitive
-    const skinTypeScores = [0, 0, 0];
-    //Dry/Oily/Combination, Sensitive/""
-    let skinType = ["", ""];
-    const updateScores = (index) => {
-      skinTypeScores[index] += 1;
-    }
+    let scores = [0, 0, 0];
+    let skinType = "normal";
+    let isSensitive = false;
+    
     const calculateSkinType = () => {
-      skinTypeScores[0] && skinTypeScores[1] >= 1 ? skinType[0] = "Combination" :
-      skinTypeScores[0] >= 1 ? skinType[0] = "Dry" :
-      skinTypeScores[1] >= 1 ? skinType[0] = "Oily" :
-      skinType[0] = "Normal";
-      skinTypeScores[2] >= 1 ? skinType[1] = "Sensitive" : skinType[1] = "";
+      scores[0] && scores[1] >= 1 ? skinType = "combination" :
+      scores[0] >= 1 ? skinType = "dry" :
+      scores[1] >= 1 ? skinType = "oily" :
+      skinType = "normal";
+      scores[2] >= 1 ? isSensitive = true : isSensitive = false;
     }
+    const updateScores = (index) =>{
+      scores[index] = 1;
+    }
+    const clickResponse = () => {
+      updateSkinType(skinType, isSensitive);
+      nextStep();
+    }
+    
     return (
         <div className="B2-container">
           <div className="header">
@@ -35,8 +39,7 @@ const B2 = ({updateRadio, updateCheckbox, nextStep, responses, questions, option
           <label className="radio-options">{result}</label>
           </>))}
           </div>
-          {responses.clean === "Tight and dry" ? updateScores(0) : responses.clean === "Still greasy and shiny" ? updateScores(1) : ""}
-          {console.log("log1 =" + skinTypeScores[0] + skinTypeScores[1] + skinTypeScores[2])}
+          {responses.clean === "Tight and dry" ? updateScores(0) : responses.clean === "Still greasy and shiny" ? updateScores(1) : console.log("none")}
           <div>
           <label className="question">{questions[1]}</label>
           </div>
@@ -48,8 +51,7 @@ const B2 = ({updateRadio, updateCheckbox, nextStep, responses, questions, option
           </>
           ))}
           </div>
-          {responses.winter === "Yes" ? updateScores(0) : ""}
-          {console.log("log2 =" + skinTypeScores[0] + skinTypeScores[1] + skinTypeScores[2])}
+          {responses.winter === "Yes" ? updateScores(0) : console.log("none")}
           <div>
           <label className="question">{questions[2]}</label>
           </div>
@@ -67,21 +69,19 @@ const B2 = ({updateRadio, updateCheckbox, nextStep, responses, questions, option
           <div>
           {options.sensitive.map(result=>(
           <>
-          <input className="radio-buttons" type="checkbox" onChange={e=>updateCheckbox(e)} name="sensitive"/>
+          <input className="radio-buttons" type="checkbox" name="sensitive" value={result}
+          onChange={e=>updateCheckbox(e)}/>
           <label className="radio-options">{result}</label>
           </>
           ))}
           </div>
-          {/* {responses.sensitive[0] === "I have irritated skin" ? updateScores(2) : ""}  */}
-          {/* {console.log("type: " + typeof responses.sensitive)} */}
-          {console.log("log3 =" + skinTypeScores[0] + skinTypeScores[1] + skinTypeScores[2])}
+          {Array.isArray(responses.sensitive) ? responses.sensitive[1] === "None of these" ?
+                console.log("none of these") : updateScores(2) : console.log("not a array")
+            }
           </div>
           </form>
           {calculateSkinType()}
-          {/* {updateSkinType} */}
-          {console.log("log4 =" + skinTypeScores[0] + skinTypeScores[1] + skinTypeScores[2])}
-          {console.log("type = " + skinType[0] + skinType[1])}
-          <button className="btn" onClick={nextStep} style={{ left: 427, bottom: 120}}>Next</button>
+          <button className="btn" onClick={clickResponse} style={{ left: 427, bottom: 120}}>Next</button>
         </div>
       
       );
