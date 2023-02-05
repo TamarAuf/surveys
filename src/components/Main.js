@@ -55,6 +55,10 @@ const Main = () => {
     const newObj = {...Responses,[e.target.name]:newArray}
     setResponses(newObj)
  }
+
+ function updateSkinType (skinType, isSensitive){
+  setResponses({...Responses, skinType: skinType, isSensitive: isSensitive});
+ }
    
   const PageDisplay = () => {
     switch (page){
