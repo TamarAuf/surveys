@@ -1,6 +1,3 @@
-
-
-
 {
     "B1Questions": {
       "questions": ["What should we call you?","How old are you?","Which gender do you identify with?"],
@@ -27,23 +24,23 @@
       "questions": ["Do you agree?", "Then what kind of skin do you think you have?", 
       "Do you have sensitive skin?"],
       "agree": ["Yes", "No", "Not Sure"],
-      "skinType": ["Dry", "Oily", "Combination", "Sensitive", "Normal"],
+      "skinType": ["Dry", "Oily", "Combination", "Normal"],
       "isSensitive": ["Yes", "No"]
     },
     "B4Questions": {
      "questions": ["age-related","acne-related","redness","flakes","facial hair"],
-      "ageRrelated": ["Sagging skin","Fine lines","Wrinkles","Pigmentation"],
+      "ageRelated": ["Sagging skin","Fine lines","Wrinkles","Pigmentation"],
       "acneRelated":["blackheads","pimples","severe acne"], 
       "redness": ["From time to time my skin is a little red"
                   ,"My skin is red most of the time"
                   ,"I have visible blood vessels","I was diagnosed with Rosacea"],
      "flakes":["Dandruff in the hair or beard","Flakes on the skin","Seborrhea"],
-     "faicalHair":["I shave sometimes or as part of my daily skin care routine","I have a beard and don’t shave"]
+     "facialHair":["I shave sometimes or as part of my daily skin care routine","I have a beard and don’t shave"]
     },
     "B5Questions": {
       "Acne": {
         "questions": ["Do you have pimples all the time?","What do you feel causes these changes?","How does your skin usually react to skin care products for acne-prone skin?"],
-        "pimpels": ["Only on occasion","Always, but the intensity varies over time","Always, in a rather consistent manner"],
+        "pimples": ["Only on occasion","Always, but the intensity varies over time","Always, in a rather consistent manner"],
         "changes": ["Hormonal changes","Lack of sleep","Applying cosmetic products","Wearing a mask","Alimentation",
         "Weather, seasonal changes","Shaving","Not sure"],
         "skinReact":["It helps, and my skin feels comfortable","Usually useless, but my skin feels fine",
@@ -54,7 +51,7 @@
         "questions": ["Which pigmentation problem do you suffer from?","Are the pigmentation issues related to sun exposure?","Which other factors seem to affect the appearance of the spots?"],
         "problem": ["Discoloration","Dark spots"],
         "sunExposure": ["Yes","No","Not sure"],
-       "skinReact": ["Stress, fatigue","Hormonal changes","Acne scars","Medical issues","Not sure"]
+       "otherFactor": ["Stress, fatigue","Hormonal changes","Acne scars","Medical issues","Not sure"]
       },
 
      "Shave": {

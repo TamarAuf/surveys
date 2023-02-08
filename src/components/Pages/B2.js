@@ -35,7 +35,9 @@ const B2 = ({updateRadio, updateCheckbox, updateSkinType, nextStep, responses, q
          <div>
          {options.clean.map(result=>(
           <>
-          <input className="radio-buttons" type="radio" value={result} onChange={e=>updateRadio(e)} name="clean"/>
+          <input className="radio-buttons" type="radio" name="clean" value={result} 
+          category="dry"
+          onChange={e=>updateRadio(e)} />
           <label className="radio-options">{result}</label>
           </>))}
           </div>
@@ -76,7 +78,7 @@ const B2 = ({updateRadio, updateCheckbox, updateSkinType, nextStep, responses, q
           ))}
           </div>
           {Array.isArray(responses.sensitive) ? responses.sensitive[1] === "None of these" ?
-                console.log("none of these") : updateScores(2) : console.log("not a array")
+                console.log("none of these") : updateScores(2) : console.log("not an array")
             }
           </div>
           </form>
