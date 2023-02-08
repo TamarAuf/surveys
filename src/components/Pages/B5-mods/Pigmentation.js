@@ -1,9 +1,9 @@
 
-const Pigmentation = ({pigmentation}) =>{
+const Pigmentation = ({pigmentation, updateRadio, updateCheckbox}) =>{
     
     return(
             <div> 
-            <h2 className="subtitle">You mentioned you have acne,let's learn more</h2>
+            <h2 className="subtitle">You mentioned you have pigmentation, let's learn more</h2>
 
             <form className="form" style={{marginTop:50}}> 
             <div className="B2-grid-container">   
@@ -11,8 +11,8 @@ const Pigmentation = ({pigmentation}) =>{
             <div>
             {pigmentation.problem.map(result=>(
             <>
-            <input className="radio-buttons" type="checkbox" value={result} 
-            onChange={null}/>
+            <input className="radio-buttons" type="checkbox" name="problem" value={result} 
+            onChange={e=>updateCheckbox(e)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}
@@ -22,8 +22,8 @@ const Pigmentation = ({pigmentation}) =>{
             <div>
             {pigmentation.sunExposure.map(result=>(
             <>
-            <input className="radio-buttons" type="radio" value={result} 
-            onChange={null}/>
+            <input className="radio-buttons" type="radio" name="sunExposure" value={result} 
+            onChange={e=>updateRadio(e)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}
@@ -31,10 +31,10 @@ const Pigmentation = ({pigmentation}) =>{
             
             <div><label>{pigmentation.questions[2]}</label></div>
             <div>
-            {pigmentation.skinReact.map(result=>(
+            {pigmentation.otherFactor.map(result=>(
             <>
-            <input className="radio-buttons" type="checkbox" value={result} 
-            onChange={null}/>
+            <input className="radio-buttons" type="checkbox" name="otherFactor" value={result} 
+            onChange={e=>updateCheckbox(e)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}

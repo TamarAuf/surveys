@@ -1,6 +1,6 @@
 
 
-const Shave = ({shave}) =>{
+const Shave = ({shave, updateRadio}) =>{
 
     
     return(<div> 
@@ -13,8 +13,8 @@ const Shave = ({shave}) =>{
         <div>
         {shave.often.map(result=>(
         <>
-        <input className="radio-buttons" type="radio" value={result} 
-        onChange={null}/>
+        <input className="radio-buttons" type="radio" name="often" value={result} 
+        onChange={e=>updateRadio(e)}/>
         <label className="radio-options">{result}</label>
         </>
         ))}
@@ -24,8 +24,8 @@ const Shave = ({shave}) =>{
         <div>
         {shave.razor.map(result=>(
         <>
-        <input className="radio-buttons" type="radio" value={result} 
-        onChange={null}/>
+        <input className="radio-buttons" type="radio" name="razor" value={result} 
+        onChange={e=>updateRadio(e)}/>
         <label className="radio-options">{result}</label>
         </>
         ))}
