@@ -1,5 +1,5 @@
 
-const Pigmentation = ({pigmentation, updateRadio, updateCheckbox, userScores, updateUserScores}) =>{
+const Pigmentation = ({pigmentation, updateRadio, updateCheckbox}) =>{
     
     return(
             <div> 

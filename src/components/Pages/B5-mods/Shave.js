@@ -1,6 +1,6 @@
 
 
-const Shave = ({shave, updateRadio, updateCheckbox, userScores, updateUserScores}) =>{
+const Shave = ({shave, updateRadio}) =>{
 
     
     return(<div> 

@@ -1,5 +1,5 @@
 
-const Acne = ({acne, updateRadio, updateCheckbox, userScores, updateUserScores}) =>{
+const Acne = ({acne, updateRadio, updateCheckbox}) =>{
     
     return(
             <div> 
