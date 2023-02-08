@@ -1,6 +1,7 @@
 import { useState } from "react" 
 import Questions from '../data/Questions.json'
 import responses from '../data/Responses.json'
+import userScores from '../data/UserScores.json'
 import Intro from "./Pages/Intro"
 import B1 from "./Pages/B1.js"
 import B2 from "./Pages/B2"
@@ -17,6 +18,7 @@ const Main = () => {
   const [page, setPage] = useState(0);
 
   let [Responses,setResponses]  = useState(responses)
+  let [UserScores,setUserScores]  = useState(userScores)
   
 
 
@@ -32,9 +34,9 @@ const Main = () => {
     currPage + 2)
   }
  
-  // functions to update the responses
+  // functions to update the responses and scores
  function updateRadio (e){
-   setResponses({...Responses,[e.target.name]:e.target.value}) 
+   setResponses({...Responses,[e.target.name]:e.target.value});
  }
 
  function updateCheckbox (e){ 
@@ -59,30 +61,34 @@ const Main = () => {
  function updateSkinType (skinType, isSensitive){
   setResponses({...Responses, skinType: skinType, isSensitive: isSensitive});
  }
-   
+
+ function updateUserScores (category, score){
+ setUserScores({...UserScores, [category]: score});
+ }
+
   const PageDisplay = () => {
     switch (page){
         case 0:
             return(<Intro
               nextStep={nextStep}/>);
         case 1:
-            return(<B1 updateRadio={updateRadio} responses={responses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
+            return(<B1 updateRadio={updateRadio} responses={Responses} questions={Questions.B1Questions.questions} options={Questions.B1Questions}
               nextStep={nextStep}/> );   
         case 2:
             return(<B2 updateRadio={updateRadio} updateCheckbox={updateCheckbox} updateSkinType={updateSkinType} 
               questions={Questions.B2Questions.questions} options={Questions.B2Questions} 
-              responses={Responses} setResponses={setResponses} nextStep={nextStep}/>);
+              responses={Responses} userScores={UserScores} updateUserScores={updateUserScores} nextStep={nextStep}/>);
         case 3:
             return(<B3 updateRadio={updateRadio} updateSkinType={updateSkinType} questions={Questions.B3Questions.questions} options={Questions.B3Questions}
-              responses={Responses} nextStep={nextStep}/>);
+              responses={Responses} userScores={UserScores} updateUserScores={updateUserScores} nextStep={nextStep}/>);
         case 4:
-            return(<B4 updateCheckbox={updateCheckbox} responses={responses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
-              nextStep={nextStep} skipStep={skipStep}/>);    
+            return(<B4 updateRadio={updateRadio} updateCheckbox={updateCheckbox} responses={Responses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
+              userScores={UserScores} updateUserScores={updateUserScores} nextStep={nextStep} skipStep={skipStep}/>);    
         case 5:
-            return(<B5 updateRadio={updateRadio} responses={responses} acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
+            return(<B5 updateRadio={updateRadio} responses={Responses} acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
               nextStep={nextStep}/>);
         case 6:
-            return(<B6 updateRadio={updateRadio} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
+            return(<B6 updateRadio={updateRadio} updateCheckbox={updateCheckbox} questions={Questions.B6Questions.questions} options={Questions.B6Questions}
               responses={Responses} nextStep={nextStep}/>);
         case 7:
             return(<Result responses={Responses} updateRadio={updateRadio}/>);
