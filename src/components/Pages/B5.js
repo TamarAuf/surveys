@@ -4,7 +4,7 @@ import Acne from "./B5-mods/Acne"
 import Pigmentation from "./B5-mods/Pigmentation" 
 import Shave from "./B5-mods/Shave"  
 
-const B5 = ({nextStep,setResponses,responses,acne,pigmentation,shave}) =>{
+const B5 = ({nextStep,acne,pigmentation,shave,updateRadio,updateCheckbox,userScores,updateUserScores}) =>{
 
 
     return(
@@ -16,9 +16,12 @@ const B5 = ({nextStep,setResponses,responses,acne,pigmentation,shave}) =>{
           Select all the examples that fit</h2>
          </div>
           <div>
-            <Acne acne={acne} responses={responses} setResponses={setResponses}/>
-            <Pigmentation pigmentation={pigmentation} responses={responses} setResponses={setResponses}/>
-            <Shave shave={shave} responses={responses} setResponses={setResponses}/>
+            <Acne acne={acne} updateRadio={updateRadio} updateCheckbox={updateCheckbox}
+            userScores={userScores} updateUserScores={updateUserScores}/>
+            <Pigmentation pigmentation={pigmentation} updateRadio={updateRadio} updateCheckbox={updateCheckbox}
+            userScores={userScores} updateUserScores={updateUserScores}/>
+            <Shave shave={shave} updateRadio={updateRadio} updateCheckbox={updateCheckbox}
+            userScores={userScores} updateUserScores={updateUserScores}/>
             </div>
         <button className="btn-corner" style={ {marginLeft: 1000}} onClick={nextStep}>Next</button>
         </div>

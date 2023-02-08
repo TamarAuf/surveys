@@ -85,7 +85,7 @@ const Main = () => {
             return(<B4 updateRadio={updateRadio} updateCheckbox={updateCheckbox} responses={Responses} questions={Questions.B4Questions.questions} options={Questions.B4Questions}
               userScores={UserScores} updateUserScores={updateUserScores} nextStep={nextStep} skipStep={skipStep}/>);    
         case 5:
-            return(<B5 updateRadio={updateRadio} responses={Responses} acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
+            return(<B5 updateRadio={updateRadio} updateCheckbox={updateCheckbox} responses={Responses} acne={Questions.B5Questions.Acne} pigmentation={Questions.B5Questions.Pigmentation} shave={Questions.B5Questions.Shave}
               nextStep={nextStep}/>);
         case 6:
             return(<B6 updateRadio={updateRadio} updateCheckbox={updateCheckbox} questions={Questions.B6Questions.questions} options={Questions.B6Questions}

@@ -1,5 +1,5 @@
 
-const Acne = ({acne}) =>{
+const Acne = ({acne, updateRadio, updateCheckbox, userScores, updateUserScores}) =>{
     
     return(
             <div> 
@@ -10,10 +10,10 @@ const Acne = ({acne}) =>{
             <div className="B2-grid-container"> 
             <div><label className="question">{acne.questions[0]}</label></div>
             <div>
-            {acne.pimpels.map(result=>(
+            {acne.pimples.map(result=>(
             <>
-            <input className="radio-buttons" type="radio" value={result} 
-            onChange={null}/>
+            <input className="radio-buttons" type="radio" name="pimples" value={result} 
+            onChange={e=>updateRadio(e)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}
@@ -23,8 +23,8 @@ const Acne = ({acne}) =>{
             <div>
             {acne.changes.map(result=>(
             <>
-            <input className="radio-buttons" type="checkbox" value={result} 
-            onChange={null}/>
+            <input className="radio-buttons" type="checkbox" name="changes" value={result} 
+            onChange={e=>updateCheckbox(e)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}
@@ -34,8 +34,8 @@ const Acne = ({acne}) =>{
             <div>
             {acne.skinReact.map(result=>(
             <>
-            <input className="radio-buttons" type="radio" value={result} 
-            onChange={null}/>
+            <input className="radio-buttons" type="radio" name="skinReact" value={result} 
+            onChange={e=>updateRadio(e)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}
