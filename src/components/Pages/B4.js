@@ -6,7 +6,8 @@ const B4 = ({updateCheckbox,updateRadio,userScores,updateUserScores,nextStep,ski
         if(Array.isArray(responses.acneRelated)) updateUserScores("acne", userScores.acne += responses.acneRelated.length/10);
         if(Array.isArray(responses.redness)) updateUserScores("rosacea", userScores.rosacea += responses.redness.length/10);
         if(Array.isArray(responses.flakes)) updateUserScores("dandruff", userScores.dandruff += responses.flakes.length/10);
-        responses.name ? nextStep() : skipStep();
+        responses.ageRelated ? nextStep() : skipStep();
+        console.log(responses.ageRelated)
       }
     
     return (
@@ -23,7 +24,7 @@ const B4 = ({updateCheckbox,updateRadio,userScores,updateUserScores,nextStep,ski
         {options.ageRelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" name="ageRelated" value={result} 
-         onChange={e=>updateCheckbox(e)}/>
+         onChange={e=>updateCheckbox(e,responses.ageRelated)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
@@ -34,7 +35,7 @@ const B4 = ({updateCheckbox,updateRadio,userScores,updateUserScores,nextStep,ski
         {options.acneRelated.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" name="acneRelated" value={result} 
-        onChange={e=>updateCheckbox(e)}/>
+        onChange={e=>updateCheckbox(e,responses.acneRelated)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
@@ -45,7 +46,7 @@ const B4 = ({updateCheckbox,updateRadio,userScores,updateUserScores,nextStep,ski
         {options.redness.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" name="redness" value={result} 
-        onChange={e=>updateCheckbox(e)}/>
+        onChange={e=>updateCheckbox(e,responses.redness)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}
@@ -56,7 +57,7 @@ const B4 = ({updateCheckbox,updateRadio,userScores,updateUserScores,nextStep,ski
         {options.flakes.map(result=>(
         <>
         <input className="radio-buttons" type="checkbox" name="flakes" value={result} 
-        onChange={e=>updateCheckbox(e)}/>
+        onChange={e=>updateCheckbox(e,responses.flakes)}/>
          <label className="radio-options">{result}</label>
          </>
         ))}

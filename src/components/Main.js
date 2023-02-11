@@ -39,12 +39,20 @@ const Main = () => {
    setResponses({...Responses,[e.target.name]:e.target.value});
  }
 
- function updateCheckbox (e){ 
-    const newArray = [...[e.target.name]]
+ function updateCheckbox (e,array){ 
+    let newArray = []
+    // if array exists make a copy of it 
+    if(Array.isArray(array))
+    {
+       newArray = [...array]
+    }
+    
     // add to array if item is checked
     if(e.target.checked)
     {
       newArray.push(e.target.value)
+      
+      
     }
     // remove from array if item is unchecked
     else
@@ -54,8 +62,7 @@ const Main = () => {
       
     }
     
-    const newObj = {...Responses,[e.target.name]:newArray}
-    setResponses(newObj)
+    setResponses({...Responses,[e.target.name]:newArray})
  }
 
  function updateSkinType (skinType, isSensitive){
