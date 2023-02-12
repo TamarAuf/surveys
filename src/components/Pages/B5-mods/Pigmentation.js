@@ -1,5 +1,5 @@
 
-const Pigmentation = ({pigmentation, updateRadio, updateCheckbox}) =>{
+const Pigmentation = ({responses,pigmentation, updateRadio, updateCheckbox}) =>{
     
     return(
             <div> 
@@ -12,7 +12,7 @@ const Pigmentation = ({pigmentation, updateRadio, updateCheckbox}) =>{
             {pigmentation.problem.map(result=>(
             <>
             <input className="radio-buttons" type="checkbox" name="problem" value={result} 
-            onChange={e=>updateCheckbox(e)}/>
+            onChange={e=>updateCheckbox(e,responses.problem)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}
@@ -34,7 +34,7 @@ const Pigmentation = ({pigmentation, updateRadio, updateCheckbox}) =>{
             {pigmentation.otherFactor.map(result=>(
             <>
             <input className="radio-buttons" type="checkbox" name="otherFactor" value={result} 
-            onChange={e=>updateCheckbox(e)}/>
+            onChange={e=>updateCheckbox(e,responses.otherFactor)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}

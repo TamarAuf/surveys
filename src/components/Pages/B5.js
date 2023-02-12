@@ -28,9 +28,9 @@ const B5 = ({ nextStep, acne, pigmentation, shave, responses, updateRadio, updat
                     Select all the examples that fit</h2>
             </div>
             <div>
-                <Acne acne={acne} updateRadio={updateRadio} updateCheckbox={updateCheckbox}/>
-                <Pigmentation pigmentation={pigmentation} updateRadio={updateRadio} updateCheckbox={updateCheckbox}/>
-                <Shave shave={shave} updateRadio={updateRadio} updateCheckbox={updateCheckbox}/>
+                {Array.isArray(responses.acneRelated)&&<Acne responses={responses} acne={acne} updateRadio={updateRadio} updateCheckbox={updateCheckbox}/>}
+                {(Array.isArray(responses.ageRelated)&&responses.ageRelated.includes("Pigmentation"))&&<Pigmentation responses={responses} pigmentation={pigmentation} updateRadio={updateRadio} updateCheckbox={updateCheckbox}/>}
+                {responses.facialHair==="I shave sometimes or as part of my daily skin care routine"&&<Shave shave={shave} updateRadio={updateRadio}/>}
             </div>
             <button className="btn-corner" style={{ marginLeft: 1000 }} onClick={clickResponse}>Next</button>
         </div>

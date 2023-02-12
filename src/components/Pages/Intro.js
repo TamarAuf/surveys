@@ -1,5 +1,5 @@
 
-//raz 
+
 
 
 const Intro = ({nextStep}) => {

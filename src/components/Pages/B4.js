@@ -1,4 +1,4 @@
-//raz
+
 
 const B4 = ({updateCheckbox,updateRadio,userScores,updateUserScores,nextStep,skipStep,responses,questions,options}) => {
     const clickResponse = () => {
@@ -6,8 +6,9 @@ const B4 = ({updateCheckbox,updateRadio,userScores,updateUserScores,nextStep,ski
         if(Array.isArray(responses.acneRelated)) updateUserScores("acne", userScores.acne += responses.acneRelated.length/10);
         if(Array.isArray(responses.redness)) updateUserScores("rosacea", userScores.rosacea += responses.redness.length/10);
         if(Array.isArray(responses.flakes)) updateUserScores("dandruff", userScores.dandruff += responses.flakes.length/10);
-        responses.ageRelated ? nextStep() : skipStep();
-        console.log(responses.ageRelated)
+        ((Array.isArray(responses.ageRelated)&&responses.ageRelated.includes("Pigmentation"))
+        ||Array.isArray(responses.acneRelated)
+        ||responses.facialHair==="I shave sometimes or as part of my daily skin care routine") ? nextStep() : skipStep();
       }
     
     return (

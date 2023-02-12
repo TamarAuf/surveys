@@ -1,5 +1,5 @@
 
-const Acne = ({acne, updateRadio, updateCheckbox}) =>{
+const Acne = ({responses,acne, updateRadio, updateCheckbox}) =>{
     
     return(
             <div> 
@@ -24,7 +24,7 @@ const Acne = ({acne, updateRadio, updateCheckbox}) =>{
             {acne.changes.map(result=>(
             <>
             <input className="radio-buttons" type="checkbox" name="changes" value={result} 
-            onChange={e=>updateCheckbox(e)}/>
+            onChange={e=>updateCheckbox(e,responses.changes)}/>
             <label className="radio-options">{result}</label>
             </>
             ))}
