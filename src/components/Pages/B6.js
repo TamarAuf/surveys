@@ -29,7 +29,7 @@ const B6 = ({updateRadio, updateCheckbox, nextStep, responses, questions, option
         {options.allergy.map(result=>(
           <>
           <input style={{"position": "relative", "top": "0px"}} className="radio-buttons" type="checkbox" value={result} 
-          onChange={e=>updateCheckbox(e)} name="allergy"/>
+          onChange={e=>updateCheckbox(e, responses.allergy)} name="allergy"/>
           <label style={{"position": "relative", "top": "0px"}} className="radio-options">{result}</label>
           </>
           ))}

@@ -72,14 +72,13 @@ const B2 = ({updateRadio, updateCheckbox, updateSkinType, nextStep, responses, q
           {options.sensitive.map(result=>(
           <>
           <input className="radio-buttons" type="checkbox" name="sensitive" value={result}
-          onChange={e=>updateCheckbox(e)}/>
+          onChange={e=>updateCheckbox(e, responses.sensitive)}/>
           <label className="radio-options">{result}</label>
           </>
           ))}
           </div>
-          {Array.isArray(responses.sensitive) ? responses.sensitive[1] === "None of these" ?
-                console.log("none of these") : updateScores(2) : console.log("not an array")
-            }
+          {Array.isArray(responses.sensitive) && responses.sensitive.length > 0 && 
+          responses.sensitive[0] !== "None of these" ? updateScores(2) : console.log("not an array")}
           </div>
           </form>
           {calculateSkinType()}

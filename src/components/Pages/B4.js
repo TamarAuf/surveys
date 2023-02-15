@@ -2,12 +2,12 @@
 
 const B4 = ({updateCheckbox,updateRadio,userScores,updateUserScores,nextStep,skipStep,responses,questions,options}) => {
     const clickResponse = () => {
-        if(Array.isArray(responses.ageRelated)) updateUserScores("aging", userScores.aging += responses.ageRelated.length/10);
+        if(Array.isArray(responses.ageRelated)) updateUserScores("aging", userScores.aging += (responses.ageRelated.length/10));
         if(Array.isArray(responses.acneRelated)) updateUserScores("acne", userScores.acne += responses.acneRelated.length/10);
         if(Array.isArray(responses.redness)) updateUserScores("rosacea", userScores.rosacea += responses.redness.length/10);
         if(Array.isArray(responses.flakes)) updateUserScores("dandruff", userScores.dandruff += responses.flakes.length/10);
         ((Array.isArray(responses.ageRelated)&&responses.ageRelated.includes("Pigmentation"))
-        ||Array.isArray(responses.acneRelated)
+        ||(Array.isArray(responses.acneRelated)&&responses.acneRelated.length>0)
         ||responses.facialHair==="I shave sometimes or as part of my daily skin care routine") ? nextStep() : skipStep();
       }
     
