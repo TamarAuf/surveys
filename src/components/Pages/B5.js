@@ -6,13 +6,13 @@ const B5 = ({ nextStep, acne, pigmentation, shave, responses, updateRadio, updat
     const clickResponse = () => {
         switch (responses.pimples) {
             case "Only on occasion":
-                updateUserScores("acne", userScores.acne += .1);
+                updateUserScores("acne", userScores.acne += 1);
                 break;
             case "Always, but the intensity varies over time":
-                updateUserScores("acne", userScores.acne += .2);
+                updateUserScores("acne", userScores.acne += 2);
                 break;
             case "Always, in a rather consistent manner":
-                updateUserScores("acne", userScores.acne += .3);
+                updateUserScores("acne", userScores.acne += 3);
                 break;
             default:
                 break;

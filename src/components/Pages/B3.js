@@ -14,27 +14,27 @@ const B3 = ({updateRadio, updateSkinType, userScores, updateUserScores, nextStep
     }
     switch(finalSkinType){
       case "dry": 
-        updateUserScores("dry_skin", userScores.dry_skin += .1);
-        updateUserScores("oily_skin", userScores.oily_skin -= .1);
+        updateUserScores("dry_skin", userScores.dry_skin += 1);
+        updateUserScores("oily_skin", userScores.oily_skin -= 1);
         break;
       case "oily":
-        updateUserScores("oily_skin", userScores.oily_skin += .1);
-        updateUserScores("dry_skin", userScores.dry_skin -= .1);
+        updateUserScores("oily_skin", userScores.oily_skin += 1);
+        updateUserScores("dry_skin", userScores.dry_skin -= 1);
         break;
       case "combination":
-        updateUserScores("dry_skin", userScores.dry_skin += .1);
-        updateUserScores("oily_skin", userScores.oily_skin += .1);
+        updateUserScores("dry_skin", userScores.dry_skin += 1);
+        updateUserScores("oily_skin", userScores.oily_skin += 1);
         break;
       case "normal":
-        updateUserScores("dry_skin", userScores.dry_skin -= .1);
-        updateUserScores("oily_skin", userScores.oily_skin -= .1);
+        updateUserScores("dry_skin", userScores.dry_skin -= 1);
+        updateUserScores("oily_skin", userScores.oily_skin -= 1);
         break;
       default:
         break;
     }
     finalSensitive === true || finalSensitive === "Yes" ? 
-    updateUserScores("sensitive_skin", userScores.sensitive_skin += .1) : 
-    updateUserScores("sensitive_skin", userScores.sensitive_skin -= .1);
+    updateUserScores("sensitive_skin", userScores.sensitive_skin += responses.sensitive.length) : 
+    updateUserScores("sensitive_skin", userScores.sensitive_skin -= 1);
     nextStep();
   }
     return (

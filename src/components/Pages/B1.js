@@ -2,16 +2,16 @@ const B1 = ({ updateRadio, nextStep, questions, options, responses, userScores, 
       const clickResponse = () => {
             switch (responses.age) {
                   case "up to 20":
-                        updateUserScores("aging", userScores.aging -= .2);
+                        updateUserScores("aging", userScores.aging -= 2);
                         break;
                   case "21-35":
-                        updateUserScores("aging", userScores.aging -= .1);
+                        updateUserScores("aging", userScores.aging -= 1);
                         break;
                   case "36-60":
-                        updateUserScores("aging", userScores.aging += .1);
+                        updateUserScores("aging", userScores.aging += 1);
                         break;
                   case "60 and up":
-                        updateUserScores("aging", userScores.aging += .2);
+                        updateUserScores("aging", userScores.aging += 2);
                         break;
                   default:
                         break;
